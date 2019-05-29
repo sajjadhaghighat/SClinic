@@ -1,0 +1,27 @@
+<div class="searchdiv">
+  <input class="searchinput" type="text" placeholder="جستجو هوشمند در کلینیک خاص ...">
+</div>
+<div [ngClass]="{'titlediv1' : styleservice.Flag == true,
+                 'titlediv1-v2': styleservice.Flag == false}">
+  <div class="titleindiv1">
+      CLINIC
+  </div>
+  <div>
+    <div style="height:40px"> </div>
+    <div class="titleindiv2"> 
+        <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-home" aria-hidden="true"></i> خانه / Home</button></a>
+        <button mat-button><i class="fa fa-newspaper-o" aria-hidden="true"></i> اخبار / News</button>
+        <a [routerLink]="['/user-register']" routerLinkActive="router-link-active" ><button mat-button ><i class="fa fa-user-plus" aria-hidden="true"></i> عضویت / Register</button></a>
+        <button mat-button data-toggle="modal" data-target="#eModal1"><i class="fa fa-sign-in" aria-hidden="true" ></i> ورود / Login</button>
+        <a [routerLink]="['/about-us']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-address-card-o" aria-hidden="true"></i> درباره ما / About us</button></a>
+        <a [routerLink]="['/contact-us']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-phone" aria-hidden="true"></i> تماس با ما / Contact us</button></a>
+    </div>
+    <app-login></app-login>
+    <div style="height:40px"> </div>
+    
+  </div>
+</div>
+<div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+                 'titlediv2-v2': styleservice.Flag == false}">
+    <i class="fa fa-exchange" style="cursor: pointer;" (click)="styleservice.styleChange()" aria-hidden="true"></i>
+</div>

@@ -1,0 +1,138 @@
+.titlediv2{
+  background-color: #a51e2c;
+  height: 45px;
+  text-align: center;
+  font-size: 25px;
+}
+.titlediv2-v2{
+  background-color: #3f51b5;
+  height: 45px;
+  text-align: center;
+  font-size: 25px;
+}
+.back{
+  width: 100%;
+  max-height: 400px;
+  font-family: 'IRANSans';
+  font-size: 4vw;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+
+  
+}
+.back::after{
+
+ background: url(Content\img\locations_header.jpg);
+ background-size: cover;
+ opacity: 0.3;
+ content: "";
+ top: 0;
+ left: 0;
+ bottom: 0;
+ right: 0;
+ position: absolute;
+ 
+  
+}
+.back i{
+  padding: 25px;
+  font-size: 35px;
+}
+.zoom {
+    overflow: hidden; 
+    width: 100%;
+    height: auto;
+  }
+.zoom{
+    transition: transform .5s ease;
+  }
+.zoom:hover{
+    transform: scale(1.2);
+  }
+.slider{
+    color: rgb(255, 255, 255);
+    min-height: 440px;
+    padding: 50px;
+    margin-right: 1px;
+    margin-left: 0px !important;
+   
+}
+.sliderright{
+    overflow: hidden;
+}
+.sliderleft{
+    direction: rtl;
+    overflow: hidden;
+    padding: 15px;
+    text-align: justify;
+    font-family: "IRANSans";
+}
+.lastnewsheader{
+  height:100px;
+  font-family: "IRANSans";
+  background-color: rgb(216,11,54,1);
+  color: white;
+  text-align: center;
+  padding-top: 45px;
+  font-weight: bold;
+}
+.lastnewsheader-v2{
+  height:100px;
+  font-family: "IRANSans";
+  background-color: #3f51b5;
+  color: white;
+  text-align: center;
+  padding-top: 45px;
+  font-weight: bold;
+}
+.lastnewsbody{
+    direction: rtl;
+    min-height: 350px;
+    padding: 10px;
+    font-family: "IRANSans";
+    text-align: center;
+    color: whitesmoke;
+    margin-right: 1px;
+    margin-left: 0px !important;
+}
+.lastnewsimg{
+  height:200px;
+  overflow: hidden;
+}
+.lastnewstitle{
+  height:80px;
+  padding-top: 10px;
+}
+.lastnewsfooter{
+  height: 60px;
+  background-color:  rgb(216,11,54,1);
+  font-family: "IRANSans";
+  padding: 10px;
+  text-align: center
+}
+.lastnewsfooter-v2{
+  height: 60px;
+  background-color:  #3f51b5;
+  font-family: "IRANSans";
+  padding: 10px;
+  text-align: center
+}
+
+.newletter{
+  height: 100px;
+  font-family: "IRANSans";
+  padding: 10px;
+  text-align: center;
+ 
+}
+
+mat-form-field{
+  font-family:'IRANSans';
+  width: 100%;
+}

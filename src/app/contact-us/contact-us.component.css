@@ -1,0 +1,41 @@
+.divForm{
+    text-align: justify;
+    margin-top:20px;
+    margin-bottom: 150px;
+    padding-left: 75px;
+    padding-right: 75px;
+    padding-bottom: 50px;
+    padding-top:20px;
+    border-radius: 10px;
+    background-color:rgb(246, 246, 246);
+    font-family: 'IRANSans';
+ }
+ .header{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(8, 8, 105);
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color : white;
+    font-family: 'IRANSans';
+
+} 
+.contactform{
+    margin-top: 150px;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(105, 8, 105);
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color : white;
+    font-family: 'IRANSans';
+    border-radius: 10px;
+}
+.full-width {
+    width: 100%;
+    font-family: 'IRANSans'; 
+    margin-top:25px;
+
+}

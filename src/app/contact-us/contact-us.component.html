@@ -1,0 +1,43 @@
+<app-header></app-header>
+<div class="header">
+    <h1>تماس با ما</h1>
+</div>
+<div class="container">
+        <div class="divForm" dir="rtl">
+          <section>
+                <p>
+                        شما همراهان گرامی می توانید سوالات، نطرات و هر گونه انتقاد و پیشنهادات خود را از راه های ارتباطی زیر با ما در میان بگذارید
+
+                        نظرات و پیشنهادات شما راهنمای ما برای ادامه راه خواهد بود
+                </p>
+                <p> تلفن مرکز اطلاع رسانی: 22045325 داخلی</p>
+                <p>آذربایجان غربی ارومیه خیابان بنی هاشم کوی ۱۹ پلاک ۲۴</p>
+                <p>کدپستی: 1915718161</p>
+          </section>
+        
+        <div class="contactform">
+                  
+                <h3>فرم ارسال پیام</h3>    
+        </div>
+        <form action="" #ContactForm>
+        
+         <div class="col-lg-8 mx-auto">
+                <mat-form-field class="full-width">
+                        <input type="text" #Name="ngModel" name="Name" ngModel matInput  placeholder="نام و نام خانوادگی" required>
+                        <mat-error *ngIf="Name.invalid">نام و نام خانوادگی را وارد کنید</mat-error>
+                </mat-form-field>
+                <mat-form-field class="full-width">
+                        <input type="text" #Email="ngModel" name="Email" ngModel matInput  placeholder="پست الکترونیکی" required>
+                        <mat-error *ngIf="Email.invalid">ایمیل را وارد کنید</mat-error>
+                </mat-form-field>  
+                <mat-form-field class="full-width">
+                        <textarea #Message="ngModel" name="Message" ngModel matInput  placeholder="متن پیام" required></textarea>
+                        <mat-error *ngIf="Message.invalid">متن پیام را وارد کنید</mat-error>
+                </mat-form-field>  
+                <button  type="submit" [disabled]="!ContactForm.valid" class="btn btn-lg btn-block btn-info" style="margin-top:100px"  [title]="!ContactForm.valid ? 'فرم را به طور کامل پر کنید' : ''">ارسال پیام <i class="fa fa-paper-plane" aria-hidden="true"></i></button>    
+          </div>
+        </form>
+</div>       
+        
+</div>
+<app-footer></app-footer>
