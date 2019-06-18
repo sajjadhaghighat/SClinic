@@ -17,6 +17,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { StyleService } from './Services/style.service';
 import { NotAccessComponent } from './not-access/not-access.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     UserRegisterComponent,
     AboutUsComponent,
     NotAccessComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +46,9 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(
+      {toastClass: 'ngx-toastr toastr',positionClass:'toast-top-left'}
+    )
   ],
   providers: [StyleService],
   bootstrap: [AppComponent]

@@ -12,11 +12,11 @@ export class StyleService {
     this.Flag = !this.Flag;
     if(this.Flag == true)
     {
-      this.toastr.warning('استایل ۱ ', 'پیغام',{toastClass:'toastr toast',positionClass:'toast-top-left'});
+      this.toastr.warning('استایل ۱ ', 'پیغام');
     }
     else
     {
-      this.toastr.info('استایل ۲', 'پیغام',{toastClass:'toastr toast',positionClass:'toast-top-left'});
+      this.toastr.info('استایل ۲', 'پیغام');
     }
     
   }

@@ -65,13 +65,22 @@
 }
 .sliderright{
     overflow: hidden;
+    
+  
+}
+.sliderright img{
+  width: 100%;
+  height: auto;
 }
 .sliderleft{
+    margin-top: 100px;
+    line-height: 2;
     direction: rtl;
     overflow: hidden;
     padding: 15px;
     text-align: justify;
     font-family: "IRANSans";
+    color: #000;
 }
 .lastnewsheader{
   height:100px;

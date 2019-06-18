@@ -1,0 +1,20 @@
+
+img{
+    border-radius: 20px;
+    width: 100%;
+    height: auto;
+}
+.divimg{
+    width:25%;
+    background-color: white;
+    min-height:200px;
+    padding: 5px;
+}
+.divtext{
+    text-align: justify;
+    width:75%;
+    background-color: white;
+    min-height:200px;
+    padding: 5px;
+    font-family: 'IRANSans'
+}

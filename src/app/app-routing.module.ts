@@ -5,6 +5,7 @@ import { UserRegisterComponent } from './user-register/user-register.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { NotAccessComponent } from './not-access/not-access.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { NewsComponent } from './news/news.component';
 
 const routes: Routes = [
 {
@@ -20,6 +21,9 @@ const routes: Routes = [
   path: 'contact-us', component: ContactUsComponent
 },
 {
+  path:'news' , component: NewsComponent
+},
+{
   path:'**' , component: NotAccessComponent
 }
 
@@ -27,7 +31,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,{useHash:true,scrollPositionRestoration:'enabled'})],
+  imports: [RouterModule.forRoot(routes,{useHash:true,scrollPositionRestoration:'enabled'}),RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
