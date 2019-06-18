@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StyleService } from '../Services/style.service';
 
 @Component({
   selector: 'app-news',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(public styleservice:StyleService) { }
 
   ngOnInit() {
   }
