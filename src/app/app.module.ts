@@ -18,6 +18,8 @@ import { StyleService } from './Services/style.service';
 import { NotAccessComponent } from './not-access/not-access.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NewsComponent } from './news/news.component';
+import { DoctorRegisterComponent } from './doctor-register/doctor-register.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NewsComponent } from './news/news.component';
     AboutUsComponent,
     NotAccessComponent,
     ContactUsComponent,
-    NewsComponent
+    NewsComponent,
+    DoctorRegisterComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

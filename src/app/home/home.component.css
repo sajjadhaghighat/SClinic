@@ -23,8 +23,14 @@
   border-radius: 5px;
   display: block;
   position: relative;
-
+  animation: ravan 10s linear infinite;
   
+}
+@keyframes ravan{
+  0%   {color: black;}
+  25%  {color: yellow;}
+  50%  {color: blue;}
+  100% {color: green;}
 }
 .back::after{
 

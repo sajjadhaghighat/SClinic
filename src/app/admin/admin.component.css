@@ -1,0 +1,31 @@
+.header{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(8, 8, 105);
+    margin-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color : white;
+    font-family: 'IRANSans';
+
+} 
+.grids{
+    font-family: 'IRANSans';
+    font-size: 25px;
+    font-weight: bold;
+    animation: ganimat 2s linear;
+    opacity: 1;
+    color: black;;
+}
+@keyframes ganimat{
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+mat-grid-tile{
+    background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    transition: background 0.7s;
+}
+mat-grid-tile:hover{
+    background: rgba(0, 0, 0, 0.822);
+    cursor: pointer;
+}

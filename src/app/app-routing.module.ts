@@ -6,6 +6,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { NotAccessComponent } from './not-access/not-access.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NewsComponent } from './news/news.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
 {
@@ -24,8 +25,12 @@ const routes: Routes = [
   path:'news' , component: NewsComponent
 },
 {
+  path:'admin' , component: AdminComponent
+},
+{
   path:'**' , component: NotAccessComponent
 }
+
 
 
 ];
