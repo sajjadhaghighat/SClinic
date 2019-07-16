@@ -20,6 +20,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NewsComponent } from './news/news.component';
 import { DoctorRegisterComponent } from './doctor-register/doctor-register.component';
 import { AdminComponent } from './admin/admin.component';
+import { RegisterTabComponent } from './register-tab/register-tab.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { AdminComponent } from './admin/admin.component';
     ContactUsComponent,
     NewsComponent,
     DoctorRegisterComponent,
-    AdminComponent
+    AdminComponent,
+    RegisterTabComponent
   ],
   imports: [
     BrowserModule,

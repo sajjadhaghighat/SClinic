@@ -10,8 +10,7 @@
     <div style="height:40px"> </div>
     <div class="titleindiv2"> 
         <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-home" aria-hidden="true"></i> خانه / Home</button></a>
-        <a [routerLink]="['/news']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-newspaper-o" aria-hidden="true"></i> اخبار / News</button></a>
-        <a [routerLink]="['/user-register']" routerLinkActive="router-link-active" ><button mat-button ><i class="fa fa-user-plus" aria-hidden="true"></i> عضویت / Register</button></a>
+        <a [routerLink]="['/register-tab']" routerLinkActive="router-link-active" ><button mat-button ><i class="fa fa-user-plus" aria-hidden="true"></i> عضویت / Register</button></a>
         <button mat-button data-toggle="modal" data-target="#eModal1"><i class="fa fa-sign-in" aria-hidden="true" ></i> ورود / Login</button>
         <a [routerLink]="['/about-us']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-address-card-o" aria-hidden="true"></i> درباره ما / About us</button></a>
         <a [routerLink]="['/contact-us']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-phone" aria-hidden="true"></i> تماس با ما / Contact us</button></a>
@@ -23,6 +22,12 @@
 </div>
 <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
                  'titlediv2-v2': styleservice.Flag == false}">
-    <i class="fa fa-refresh" style="cursor: pointer;" (click)="styleservice.styleChange()" aria-hidden="true"></i>
+                 <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> مشاوره پزشکی</button></a>
+                 <a [routerLink]="['/news']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> اخبار</button></a>
+                 <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button ><i class="fa fa-bolt" aria-hidden="true"></i> مطالب آموزشی</button></a>
+                 <a [routerLink]="['/']" routerLinkActive="router-link-active"><button mat-button ><i class="fa fa-bolt" aria-hidden="true" ></i> گالری</button></a>
+                 <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> فارماکوپه دارویی</button></a>
+                 <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> لیست بیمارستان ها و مراکز درمانی </button></a>             
+    <i style="cursor: pointer;" (click)="styleservice.styleChange()" aria-hidden="true">تغییر تم</i>
 </div>
 

@@ -13,16 +13,16 @@
     font-family: 'IRANSans';
     font-size: 25px;
     font-weight: bold;
-    animation: ganimat 2s linear;
+    animation: ganimatt 0.7s linear;
     opacity: 1;
     color: black;
 }
-@keyframes ganimat{
+@keyframes ganimatt{
     from {opacity: 0;}
     to {opacity: 1;}
 }
 mat-grid-tile{
-    background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    background: linear-gradient(141deg, #9fb8ad 0%, #6ae1ee 51%, #82d6f5 75%);
     transition: background 1s;
 }
 mat-grid-tile:hover{

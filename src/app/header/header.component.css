@@ -63,12 +63,32 @@
 }
 .titlediv2{
     background-color: #a51e2c;
-    height: 45px;
-    font-size: 25px;
-  }
+    direction: rtl;
+    min-height:50px; 
+    text-align:right;
+    font-family: 'IRANSans';
+    color: white;
+ }
 .titlediv2-v2{
     background-color: #3f51b5;
-    height: 45px;
-    font-size: 25px;
+    direction: rtl;
+    min-height:50px; 
+    text-align:right;
+    font-family: 'IRANSans';
+    color: white;
     
   }
+.titlediv2 button{
+    font-family: 'IRANSans';
+    color: white;
+}
+.titlediv2 button:hover{
+    border-bottom: 2px double white;
+}
+.titlediv2-v2 button{
+    font-family: 'IRANSans';
+    color: white;
+}
+.titlediv2-v2 button:hover{
+    border-bottom: 2px double white;
+}

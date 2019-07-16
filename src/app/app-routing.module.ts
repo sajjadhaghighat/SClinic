@@ -7,6 +7,8 @@ import { NotAccessComponent } from './not-access/not-access.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { NewsComponent } from './news/news.component';
 import { AdminComponent } from './admin/admin.component';
+import { RegisterTabComponent } from './register-tab/register-tab.component';
+import { DoctorRegisterComponent } from './doctor-register/doctor-register.component';
 
 const routes: Routes = [
 {
@@ -14,6 +16,12 @@ const routes: Routes = [
 },
 {
   path: 'user-register' , component: UserRegisterComponent
+},
+{
+  path: 'register-tab' , component: RegisterTabComponent
+},
+{
+  path: 'doctor-register' , component: DoctorRegisterComponent
 },
 {
   path: 'about-us' , component: AboutUsComponent

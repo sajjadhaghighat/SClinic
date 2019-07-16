@@ -1,0 +1,252 @@
+<app-header></app-header>
+<div class="header">
+<h1>فرم عضویت پزشک</h1>
+</div>
+<div class="container">
+<div class="divForm" dir="rtl">
+    <div class="logo">
+            <i class="fa fa-user-md" aria-hidden="true"></i>
+    </div>
+        
+    <form #DRegisterForm="ngForm" >
+        <!--بخش اطلاعات شخصی کاربر-->
+        <div class="form-row">
+            <h4><strong>اطلاعات پزشک</strong></h4>
+        </div>
+        <br>
+        <div class="form-row">
+           
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                    <input type="text" #Dname="ngModel" name="Dname" ngModel matInput  placeholder="نام و نام خانوداگی" required>
+                    <mat-error *ngIf="Dname.invalid">نام و نام خانوادگی را وارد کنید</mat-error>
+                    
+                </mat-form-field>
+                
+            </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                    <input type="email" #DEmail="ngModel" name="DEmail" ngModel matInput  placeholder="آدرس ایمیل (عدم نمایش عمومی)" required>
+                    <mat-error >example@mail.com</mat-error>
+                    <mat-error *ngIf="DEmail.invalid">ایمیل را وارد کنید</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                        <input type="text" #DPhone="ngModel" name="DPhone" ngModel matInput  placeholder="شماره همراه شخصی (عدم نمایش عمومی)" required>
+                        <mat-error *ngIf="DPhone.invalid">شماره تلفن را وارد کنید</mat-error>
+                        
+                </mat-form-field>
+        </div>
+         
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                        <input type="text" #Cwork="ngModel" name="Cwork" ngModel matInput  placeholder="شهر محل کار" required>
+                        <mat-error *ngIf="Cwork.invalid">شهر را وارد کنید</mat-error>
+                        
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                        <mat-label>جنسیت</mat-label>
+                        <mat-select #SEX="ngModel" name="SEX" ngModel required>
+                          <mat-option value="مرد">مرد</mat-option>
+                          <mat-option value="زن">زن</mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="SEX.invalid">جنسیت را انتخاب کنید</mat-error>
+                      </mat-form-field>
+            </div>
+            
+            <div class="form-group col-md-4">
+                    <mat-form-field class="full-width">
+                            <mat-label>صفحه اختصاصی برای کیست؟</mat-label>
+                            <mat-select #DPage="ngModel" name="DPage" ngModel required>
+                                    <mat-option value="دکترا">برای مطب دکتر است</mat-option>
+                                    <mat-option value="دکترای تخصصی">برای مطب دکترای تخصصی است</mat-option>
+                                    <mat-option value="متخصص">برای دکتر متخصص است</mat-option>
+                                    <mat-option value="فوق تخصص">برای دکتر فوق تخصص است</mat-option>
+                                    <mat-option value="فلوشیپ">برای دکتر دارای فلوشیپ است</mat-option>
+                                    <mat-option value="کارشناس ارشد">برای کارشناس ارشد است</mat-option>
+                                    <mat-option value="کارشناس">برای کارشناس است</mat-option>
+                                    <mat-option value="کلینیک یا درمانگاه">برای کلینیک یا درمانگاه است</mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="DPage.invalid">یکی را انتخاب کنید</mat-error>
+                          </mat-form-field>
+                </div>     
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                        <input type="text" #MCC="ngModel" name="MCC" ngModel matInput  placeholder="کد نظام پزشکی" required>
+                        <mat-error *ngIf="MCC.invalid">کد نظام پزشکی را وارد کنید</mat-error>
+                        
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                        <mat-label>شاخه فعالیت / تخصص</mat-label>
+                        <mat-select #Expert="ngModel" name="Expert" ngModel required>
+                          
+                            <option value="19">جراح عمومی</option>
+                            <option value="20">فوق تخصص جراحی پلاستیک،ترمیمی و زیبایی</option>
+                            <option value="21">فوق تخصص جراحی قلب</option>
+                            <option value="22">فوق تخصص جراحی عروق و تروما</option>
+                            <option value="23">فوق تخصص جراحی اطفال</option>
+                            <option value="24">فوق تخصص جراحی قفسه سینه</option>
+                            <option value="25">جراح و متخصص ارتوپدی</option>
+                            <option value="26">جراح و متخصص زنان و زایمان</option>
+                            <option value="27">جراح کلیه و مجاری ادراری (اورولوژی)</option>
+                            <option value="28">جراح مغز و اعصاب و ستون فقرات</option>
+                            <option value="29">جراح و متخصص گوش و حلق و بینی</option>
+                            <option value="30">جراح و متخصص چشم</option>
+                            <option value="53">فوق تخصص جراحی حنجره</option>
+                            <option value="1">متخصص راديولوژى</option>
+                            <option value="2">متخصص رادیوتراپی (پرتودرمانی)</option>
+                            <option value="3">متخصص قلب و عروق</option>
+                            <option value="4">متخصص اعصاب و روان (روانپزشک)</option>
+                            <option value="5">متخصص بيمارى هاى عفونى</option>
+                            <option value="6">متخصص مغز و اعصاب (نورولوژی)</option>
+                            <option value="7">متخصص پوست، مو و زيبايى</option>
+                            <option value="8">متخصص بیماری های کودکان (اطفال)</option>
+                            <option value="9">متخصص بيهوشى</option>
+                            <option value="10">متخصص پاتولوژى و علوم آزمايشگاهى</option>
+                            <option value="11">متخصص پاتولوژى قانونى و مسموميت</option>
+                            <option value="50">متخصص طب فیزیکی و توانبخشی</option>
+                            <option value="12">متخصص داخلى</option>
+                            <option value="13">فوق تخصص مفاصل و عضلات (روماتولوژى)</option>
+                            <option value="14">فوق تخصص کليه و مجارى ادرارى</option>
+                            <option value="15">فوق تخصص گوارش و كبد</option>
+                            <option value="16">فوق تخصص ریه</option>
+                            <option value="17">فوق تخصص خون و سرطان</option>
+                            <option value="52">فوق تخصص درد</option>
+                            <option value="18">فوق تخصص غدد درون ریز و متابولیسم</option>
+                            <option value="57">متخصص ایمپلنت و پروتزهای دندانی</option>
+                            <option value="56">متخصص جراحی لثه</option>
+                            <option value="58">متخصص بیماری های دهان</option>
+                            <option value="32">دندانپزشک عمومی</option>
+                            <option value="33">جراح دهان و فک و صورت</option>
+                            <option value="31">متخصص درمان ریشه دندان</option>
+                            <option value="47">متخصص دندانپزشکی ترمیمی</option>
+                            <option value="34">متخصص ارتودنسی</option>
+                            <option value="35">متخصص دندانپزشکی اطفال</option>
+                            <option value="36">فیزیوتراپی</option>
+                            <option value="38">روانشناس</option>
+                            <option value="37">متخصص تغذیه</option>
+                            <option value="39">ترک اعتیاد</option>
+                            <option value="48">پزشک عمومی</option>
+                            <option value="51">پزشک خانواده</option>
+                            <option value="49">طب سوزنی</option>
+                            <option value="45">دامپزشک</option>
+                            <option value="41">کلینیک درمانگاه</option>
+                            <option value="40">بیمارستان</option>
+                            <option value="42">آزمایشگاه</option>
+                            <option value="54">کلینیک خواب</option>
+                            <option value="43">مرکز تصویر برداری</option>
+                            <option value="44">داروخانه</option>
+                            <option value="46">انجمن علمی</option>
+                            <option value="55">مامایی</option>  
+                        </mat-select>
+                        <mat-error *ngIf="Expert.invalid">جنسیت را انتخاب کنید</mat-error>
+                      </mat-form-field>
+            </div>
+            
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                        <input type="text" #Floship="ngModel" name="Floship" ngModel matInput  placeholder="فلوشیپ (اختیاری)" >
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="form-row">
+           
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                    <input type="text" #Pwork="ngModel" name="Pwork" ngModel matInput  placeholder="نام محل کار" required>
+                    <mat-error *ngIf="Pwork.invalid"> نام محل کار را وارد کنید</mat-error>
+                    
+                </mat-form-field>
+                
+            </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                    <input type="email" #Telephone="ngModel" name="Telephone" ngModel matInput  placeholder="تلفن محل کار" required>
+                    <mat-error *ngIf="Telephone.invalid">تلفن محل کار را وارد کنید</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                        <textarea type="text" #Maddress="ngModel" name="Maddress" ngModel matInput  placeholder="آدرس محل کار" required></textarea>
+                        <mat-error *ngIf="Maddress.invalid">آدرس محل کار را وارد کنید</mat-error>
+                        
+                </mat-form-field>
+        </div>
+         
+        </div>
+        <br>
+        
+        <br>
+        
+        <!--بخش اطلاعات حساب کاربری کاربر-->
+        <div class="form-row">
+            <h4><strong>اطلاعات حساب</strong></h4>
+        </div>
+        <br>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                    <input matInput type="text" #DUsername="ngModel" name="DUsername" ngModel   placeholder="شناسه کاربری" required>
+                    <mat-icon matSuffix><i class="fa fa-user-circle-o" aria-hidden="true"></i></mat-icon>
+                    <mat-error *ngIf="DUsername.invalid">شناسه کاربری را وارد کنید</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                    <input type="password" #DPassword="ngModel" name="DPassword" ngModel matInput  placeholder="رمز عبور" required>
+                    <mat-icon matSuffix><i class="fa fa-key" aria-hidden="true"></i></mat-icon>
+                    <mat-error *ngIf="DPassword.invalid">رمز عبور را وارد کنید</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                    <input type="password" #DRpass="ngModel" name="DRpass" ngModel matInput  placeholder="تکرار رمز عبور" required>
+                    <mat-icon matSuffix><i class="fa fa-repeat" aria-hidden="true"></i></mat-icon>
+                    <mat-hint *ngIf="DPassword.value != DRpass.value">تکرار رمز عبور را درست وارد کنید</mat-hint>
+                </mat-form-field>
+            </div>
+        </div>
+        <br>
+        <div class="form-row" style="margin-top:50px;">
+                <div class="form-group col-md-3"></div>
+                <div class="form-group col-md-3">
+                        <button  type="submit" [disabled]="!DRegisterForm.valid" class="btn btn-lg btn-block btn-info"  [title]="!DRegisterForm.valid ? 'فرم را به طور کامل پر کنید' : ''">ثبت اطلاعات <i class="fa fa-floppy-o"></i></button>
+                </div>
+                <div class="form-group col-md-3">
+                        <button type="button"class="btn btn-lg btn-block btn-secondary" >تکرار <i class="fa fa-repeat"></i></button>
+                </div>
+                <div class="form-group col-md-3"></div>
+        </div>
+    </form>
+</div>
+<div class="nokat">
+    <ul>
+            <li>
+            پس از مرحله پرداخت، عضویت شما فعال می‌شود و شما به طور ویژه در لیست مطب های شهر خود به مردم و میلیون ها نفر معرفی می‌شوید
+            </li>
+            
+            <li>
+            فعال کردن سرویس نوبت دهی رایگان اینترنتی فقط در چند ثانیه امکان پذیر است
+            </li>
+            
+            <li>
+            در صورت تمایل سرویس مشاوره آنلاین خود را فعال کنید و اینترنتی بیماران را ویزیت کنید
+            </li>
+            
+            <li>
+            در صورت داشتن هرگونه سوال با پشتیبانی کلینیک خاص تماس بگیرید
+            </li>
+    </ul>
+</div>    
+   
+</div>
+<app-footer></app-footer>

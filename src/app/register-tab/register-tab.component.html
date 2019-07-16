@@ -1,0 +1,24 @@
+<app-header></app-header>
+<div style="height: 80px"></div>
+<div class="header">
+  <h1>انتخاب کنید</h1>
+</div>
+
+<div class="grids">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <a [routerLink]="['/user-register']" routerLinkActive="router-link-active" ><mat-grid-tile
+        [colspan]="2"
+        [rowspan]="3"
+        >
+      ثبت نام کاربر
+    </mat-grid-tile></a>
+    <a [routerLink]="['/doctor-register']" routerLinkActive="router-link-active" ><mat-grid-tile
+        [colspan]="2"
+        [rowspan]="3"
+        >
+      ثبت نام پزشک
+    </mat-grid-tile></a>
+  </mat-grid-list>
+</div>
+<div style="height: 100px"></div>
+<app-footer></app-footer>
