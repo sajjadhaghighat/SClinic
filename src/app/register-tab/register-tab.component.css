@@ -2,7 +2,7 @@
     width: 100%;
     text-align: center;
     background-color: rgb(8, 8, 105);
-    margin-top: 10px;
+    margin-top: 50px;
     padding-top: 20px;
     padding-bottom: 20px;
     color : white;
@@ -22,11 +22,12 @@
     to {opacity: 1;}
 }
 mat-grid-tile{
-    background: linear-gradient(141deg, #9fb8ad 0%, #6ae1ee 51%, #82d6f5 75%);
-    transition: background 1s;
+    background: rgb(8, 8, 105);
+    color: white;
+    transition: 0.7s background, 0.7s color;
 }
 mat-grid-tile:hover{
-    background: linear-gradient(141deg, #9fb8ad 0%, #1d6e77 51%, #2cb5e8 75%);
+    background: yellow;
     cursor: pointer;
-    color: white;
+    color: black;
 }

@@ -1,0 +1,93 @@
+.maiin{
+    margin-right: 5%;
+    margin-left: 5%;
+   height: auto;
+}
+.head{
+    height: auto;
+    font-family: 'IRANSans';
+    font-weight: bold;
+    text-align: center;
+    padding: 55px;
+    width: 100%;
+}
+.head h1{
+    font-size: 100px;
+}
+.inform{
+    box-sizing: border-box;
+    font-family: 'IRANSans';
+    font-size: 14px;
+    direction: rtl;
+    background-color: #057fd6;
+}
+.inform .descrip{
+    padding: 10px;
+    border: 1px solid #114178;
+    border-radius: 5px;
+}
+.inform .descrip li {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    -webkit-align-items: center;
+    padding: 0 20px;
+    
+}
+.inform .descrip li span {
+    width: 30px;
+    height: 30px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: #004B97;
+}
+.inform .descrip li p {
+    margin-right: 10px;
+    margin-top: 15px;
+    color: #fff;
+    
+}
+.full-width {
+    width: 100%;
+    text-align: right;
+    font-family: 'IRANSans';
+    margin-bottom: 10px;
+}
+mat-option,mat-optgroup{
+    font-family: 'IRANSans';
+    
+}
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+  }
+  
+  .example-radio-button {
+    margin: 5px;
+    
+    font-family: 'IRANSans';
+  }
+.divForm{
+    text-align: right !important;
+     margin-top:20px;
+     margin-bottom: 80px;
+     font-family: 'IRANSans';
+     font-size: 14px;
+}     
+.submm{
+    margin-top: 20px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    transition: background-color 0.7s, color 0.7s;
+}
+.submm:hover{
+    background-color: yellow ;
+    color: black
+}

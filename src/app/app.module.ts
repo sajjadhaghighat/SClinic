@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatSelectModule,MatFormFieldModule,MatInputModule,MatButtonModule, MatIconModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material'
+import { MatSelectModule,MatFormFieldModule,MatInputModule,MatButtonModule, MatIconModule, MatGridListModule, MatCardModule, MatMenuModule,MatRadioModule } from '@angular/material'
 import { ToastrModule  } from 'ngx-toastr';
 
 
@@ -21,6 +21,7 @@ import { NewsComponent } from './news/news.component';
 import { DoctorRegisterComponent } from './doctor-register/doctor-register.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterTabComponent } from './register-tab/register-tab.component';
+import { VisitComponent } from './visit/visit.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { RegisterTabComponent } from './register-tab/register-tab.component';
     NewsComponent,
     DoctorRegisterComponent,
     AdminComponent,
-    RegisterTabComponent
+    RegisterTabComponent,
+    VisitComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { RegisterTabComponent } from './register-tab/register-tab.component';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
+    MatRadioModule,
     ToastrModule.forRoot(
       {toastClass: 'ngx-toastr toastr',positionClass:'toast-top-left'}
     )

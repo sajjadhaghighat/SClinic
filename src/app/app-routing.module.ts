@@ -9,6 +9,7 @@ import { NewsComponent } from './news/news.component';
 import { AdminComponent } from './admin/admin.component';
 import { RegisterTabComponent } from './register-tab/register-tab.component';
 import { DoctorRegisterComponent } from './doctor-register/doctor-register.component';
+import { VisitComponent } from './visit/visit.component';
 
 const routes: Routes = [
 {
@@ -22,6 +23,9 @@ const routes: Routes = [
 },
 {
   path: 'doctor-register' , component: DoctorRegisterComponent
+},
+{
+  path: 'visit' , component: VisitComponent
 },
 {
   path: 'about-us' , component: AboutUsComponent

@@ -1,0 +1,287 @@
+<app-header></app-header>
+<div class="maiin">
+    <!--Header-->
+    <div class="head">
+      <section>
+          <h1><i class="fa fa-question-circle-o" aria-hidden="true"></i></h1>
+          <h3><strong>پرسیدن سوال پزشکی در سامانه کلینیک خاص</strong></h3>
+       </section>
+     </div>
+     <!--Body-->
+     <div class="inform">
+       <ul class="descrip">
+            <li>
+              <span>۱</span>
+              <p>در آخر عنوان ، حتما علامت سوال ؟ بگذارید مثال:آیا در بیماران کولیت زخمی احتمال سرطان وجود دارد؟</p>
+            </li>
+            <li>
+              <span>۲</span>
+              <p>عنوان سوال نباید کلی باشد، به طور مثال از عبارات بیماری... یا مشکلات بیماران... پرهیز کنید زیرا سوال شما تایید نمیگردد. حتما عنوان سوال باید به موردی خاص اشاره نماید</p>
+            </li>
+       </ul>
+     </div>
+     <div class="inform">
+       <ul class="descrip">
+            <li>
+              <span>۱</span>
+              <p>سوالتان را به صورت کامل و به طور دقیق و شفاف بپرسید.</p>
+            </li>
+            <li>
+              <span>۲</span>
+              <p>به یک موضوع اصلی اشاره کنید و از پرسیدن چند سوال در یک سوال پرهیز کنید.</p>
+            </li>
+            <li>
+              <span>۳</span>
+              <p>سوالاتی مثل جواب‌آزمایش‌من‌چیست؟ تایید نخواهند شد، چرا که تجربه‌ای را به دیگران منتقل نمی کنند.</p>
+            </li>
+            <li>
+              <span>۴</span>
+              <p>در متن سوالات از توهین به پزشکی خاص و یا تشکر بیش از اندازه از یک پزشک خودداری نمایید.</p>
+            </li>
+            <li>
+              <span>۵</span>
+              <p>از به کار بردن جملات بی ارتباط پرهیز کنید و فقط به اصل موضوع سوالتان بپردازید</p>
+            </li>
+            <li>
+              <span>۶</span>
+              <p>بهتر است متن سوال نهایتاً در 4 خط پرسیده شود تا پزشکان با دقت بیشتری موارد را بخوانند .</p>
+            </li>
+            <li>
+              <span>۷</span>
+              <p>شما میتوانید مدارک پزشکی و یا تصاویری را از طریق دوربین موبایل به صورت ضمیمه کنید ، اما دقت کنید قسمت نام خودتان یا پزشک مربوطه در تصویر قابل تشخیص نباشد.</p>
+            </li>
+       </ul>
+     </div>
+     <div>
+        <form #VisitForm="ngForm">
+            <div class="form-row">
+                <div class="head">
+                  <h3>شاخه بندی پزشکی</h3>
+                </div>
+            </div>
+            <div class="form-row" dir="rtl">
+                <mat-form-field class="full-width">
+                        <mat-label>سوال شما مربوط به چه شاخه ای است ؟</mat-label>
+                        <mat-select #Cate="ngModel" name="Cate" ngModel required>
+                                                            
+                            <mat-option value="1">متخصص راديولوژى</mat-option>
+                        
+                            <mat-option value="2">متخصص رادیوتراپی (پرتودرمانی)</mat-option>
+                        
+                            <mat-option value="3">متخصص قلب و عروق</mat-option>
+                        
+                            <mat-option value="4">متخصص اعصاب و روان (روانپزشک)</mat-option>
+                        
+                            <mat-option value="5">متخصص بيمارى هاى عفونى</mat-option>
+                        
+                            <mat-option value="6">متخصص مغز و اعصاب (نورولوژی)</mat-option>
+                        
+                            <mat-option value="7">متخصص پوست، مو و زيبايى</mat-option>
+                        
+                            <mat-option value="8">متخصص بیماری های کودکان (اطفال)</mat-option>
+                        
+                            <mat-option value="9">متخصص بيهوشى</mat-option>
+                        
+                            <mat-option value="10">متخصص پاتولوژى و علوم آزمايشگاهى</mat-option>
+                        
+                            <mat-option value="11">متخصص پاتولوژى قانونى و مسموميت</mat-option>
+                        
+                            <mat-option value="12">متخصص داخلى</mat-option>
+                        
+                            <mat-option value="13">فوق تخصص مفاصل و عضلات (روماتولوژى)</mat-option>
+                        
+                            <mat-option value="14">فوق تخصص کليه و مجارى ادرارى</mat-option>
+                        
+                            <mat-option value="15">فوق تخصص گوارش و كبد</mat-option>
+                        
+                            <mat-option value="16">فوق تخصص ریه</mat-option>
+                        
+                            <mat-option value="17">فوق تخصص خون و سرطان</mat-option>
+                        
+                            <mat-option value="18">فوق تخصص غدد درون ریز و متابولیسم</mat-option>
+                        
+                            <mat-option value="19">جراح عمومی</mat-option>
+                        
+                            <mat-option value="20">فوق تخصص جراحی پلاستیک،ترمیمی و زیبایی</mat-option>
+                        
+                            <mat-option value="21">فوق تخصص جراحی قلب</mat-option>
+                        
+                            <mat-option value="22">فوق تخصص جراحی عروق و تروما</mat-option>
+                        
+                            <mat-option value="23">فوق تخصص جراحی اطفال</mat-option>
+                        
+                            <mat-option value="24">فوق تخصص جراحی قفسه سینه</mat-option>
+                        
+                            <mat-option value="25">جراح و متخصص ارتوپدی</mat-option>
+                        
+                            <mat-option value="26">جراح و متخصص زنان و زایمان</mat-option>
+                        
+                            <mat-option value="27">جراح کلیه و مجاری ادراری (اورولوژی)</mat-option>
+                        
+                            <mat-option value="28">جراح مغز و اعصاب و ستون فقرات</mat-option>
+                        
+                            <mat-option value="29">جراح و متخصص گوش و حلق و بینی</mat-option>
+                        
+                            <mat-option value="30">جراح و متخصص چشم</mat-option>
+                        
+                            <mat-option value="31">متخصص درمان ریشه دندان</mat-option>
+                        
+                            <mat-option value="32">دندانپزشک عمومی</mat-option>
+                        
+                            <mat-option value="33">جراح دهان و فک و صورت</mat-option>
+                        
+                            <mat-option value="34">متخصص ارتودنسی</mat-option>
+                        
+                            <mat-option value="35">متخصص دندانپزشکی اطفال</mat-option>
+                        
+                            <mat-option value="36">فیزیوتراپی</mat-option>
+                        
+                            <mat-option value="37">متخصص تغذیه</mat-option>
+                        
+                            <mat-option value="38">روانشناس</mat-option>
+                        
+                            <mat-option value="39">ترک اعتیاد</mat-option>
+                                                                    
+                            <mat-option value="40">دامپزشک</mat-option>
+                                                                    
+                            <mat-option value="41">متخصص دندانپزشکی ترمیمی</mat-option>
+                        
+                            <mat-option value="42">پزشک عمومی</mat-option>
+                        
+                            <mat-option value="43">طب سوزنی</mat-option>
+                        
+                            <mat-option value="44">متخصص طب فیزیکی و توانبخشی</mat-option>
+                        
+                            <mat-option value="45">فوق تخصص درد</mat-option>
+                        
+                            <mat-option value="46">فوق تخصص جراحی حنجره</mat-option>
+                                                                    
+                            <mat-option value="47">مامایی</mat-option>
+                        
+                            <mat-option value="48">متخصص جراحی لثه</mat-option>
+                        
+                            <mat-option value="49">متخصص ایمپلنت و پروتزهای دندانی</mat-option>
+                        
+                            <mat-option value="50">متخصص بیماری های دهان</mat-option>
+                        
+                        </mat-select>
+                        <mat-error *ngIf="Cate.invalid">یکی را انتخاب کنید</mat-error>
+                      </mat-form-field>
+            </div> 
+            <div class="form-row" dir="rtl">
+                <mat-form-field class="full-width">
+                    <input type="text" #Qtitle="ngModel" name="Qtitle" ngModel matInput  placeholder="عنوان سوالتان را اینجا بنویسید" required>
+                    <mat-error *ngIf="Qtitle.invalid">عنوان سوال را وارد کنید</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-row" dir="rtl">
+                <mat-form-field class="full-width">
+                        <textarea type="text" #Qtext="ngModel" name="Qtext" ngModel matInput  placeholder="سوالتان را اینجا بنویسید" required></textarea>
+                        <mat-error *ngIf="Qtext.invalid">نوشتن سوال ضروری است</mat-error>
+                        
+                </mat-form-field>
+            </div>
+            <div class="inform">
+              <ul class="descrip">
+                <li>
+                  <span>!</span>
+                  <p>در کادرهای زیر، مواردی که شامل نوع سوال یا شرایط شما نمیشوند را خالی بگذارید.</p>
+                </li>
+              </ul>
+            </div>
+            <div class="divForm">
+                <div class="form-row" dir="rtl">
+                    <div class="form-group col-md-3">
+                        <label id="example-radio-group-label">جنسیت</label>
+                        <mat-radio-group
+                          aria-labelledby="example-radio-group-label"
+                          class="example-radio-group"
+                          #Qsex="ngModel" name="Qsex" ngModel>
+                          <mat-radio-button class="example-radio-button" value="مرد">مرد</mat-radio-button>
+                          <mat-radio-button class="example-radio-button" value="زن">زن</mat-radio-button>
+                        </mat-radio-group>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <mat-form-field class="full-width">
+                            <input type="text" #Vage="ngModel" name="Vage" ngModel matInput  placeholder="سن" required>
+                            <mat-error *ngIf="Vage.invalid">نوشتن سن ضروری است</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <mat-form-field class="full-width">
+                            <input type="text" #Vhieght="ngModel" name="Vhieght" ngModel matInput  placeholder="قد" required>
+                            <mat-error *ngIf="Vhieght.invalid">نوشتن قد ضروری است</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="form-group col-md-3">
+                        <mat-form-field class="full-width">
+                            <input type="text" #Vweight="ngModel" name="Vweight" ngModel matInput  placeholder="وزن" required>
+                            <mat-error *ngIf="Vweight.invalid">نوشتن وزن ضروری است</mat-error>
+                        </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="form-row" dir="rtl">
+                    <div class="form-group col-md-6">
+                      <mat-form-field class="full-width">
+                        <textarea type="text" #Qother="ngModel" name="Qother" ngModel matInput  placeholder="سابقه بیماری دیگر - مثل فشار خون ..." ></textarea>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <mat-form-field class="full-width">
+                        <textarea type="text" #Qspecial="ngModel" name="Qspecial" ngModel matInput  placeholder="سابقه بیماری خاص - مثل ام اس ..." ></textarea>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="form-row" dir="rtl">
+                    <div class="form-group col-md-6">
+                      <mat-form-field class="full-width">
+                        <textarea type="text" #Qdrug="ngModel" name="Qdrug" ngModel matInput  placeholder="شرح داروهای در حال مصرف" ></textarea>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <mat-form-field class="full-width">
+                        <textarea type="text" #Qamal="ngModel" name="Qamal" ngModel matInput  placeholder="سابقه عمل جراحی" ></textarea>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="form-row" dir="rtl">
+                    <div class="form-group col-md-6">
+                      <mat-form-field class="full-width">
+                        <textarea type="text" #Qfamily="ngModel" name="Qfamily" ngModel matInput  placeholder="سابقه بیماری اعضای خانواده یا فامیل" ></textarea>
+                      </mat-form-field>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <mat-form-field class="full-width">
+                        <textarea type="text" #Qothercase="ngModel" name="Qothercase" ngModel matInput  placeholder="دیگر موارد و با شرح سابقه بیماری" ></textarea>
+                      </mat-form-field>
+                    </div>
+                  </div>
+                  <div class="inform">
+                    <ul class="descrip">
+                      <li>
+                        <span>!</span>
+                        <p>اطلاعات بیمار در سایت محفوظ بوده و به هیچ عنوان نمایش عمومی داده نمی شود و فقط برای ارتباط پشتیبانی کلینیک خاص در صورت بودن پرسش تکمیلی ممکن است استفاده شود</p>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="form-row" dir="rtl">
+                    <mat-form-field class="full-width">
+                      <input type="text" #Supmail="ngModel" name="Supmail" ngModel matInput  placeholder="آدرس ایمیل خود را بنویسید" required>
+                      <mat-error *ngIf="Supmail.invalid">آدرس موبایل را وارد کنید</mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="form-row" dir="rtl">
+                    <mat-form-field class="full-width">
+                      <input type="text" #Supphone="ngModel" name="Supphone" ngModel matInput  placeholder="شماره موبایل خود را بنویسید" required>
+                      <mat-error *ngIf="Supphone.invalid">شماره موبایل را وارد کنید</mat-error>
+                    </mat-form-field>
+                  </div>
+                  <div class="form-row">
+                    <button mat-raised-button class="full-width submm" color="primary" [disabled]="!VisitForm.valid" [title]="!VisitForm.valid ? 'کادرهای ضروری را به طور کامل پر کنید' : ''">ارسال سوال برای پزشکان</button>     
+                  </div>
+            </div>
+            
+        </form>  
+     </div>
+</div>
+<app-footer></app-footer>

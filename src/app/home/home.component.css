@@ -91,7 +91,7 @@
 .lastnewsheader{
   height:100px;
   font-family: "IRANSans";
-  background-color: rgb(216,11,54,1);
+  background-color: rgb(0, 93, 103);
   color: white;
   text-align: center;
   padding-top: 45px;
@@ -126,7 +126,7 @@
 }
 .lastnewsfooter{
   height: 60px;
-  background-color:  rgb(216,11,54,1);
+  background-color:  rgb(0, 93, 103);
   font-family: "IRANSans";
   padding: 10px;
   text-align: center
@@ -150,4 +150,17 @@
 mat-form-field{
   font-family:'IRANSans';
   width: 100%;
+}
+
+.raghs{
+  animation: anirag 20s ease-in infinite;
+  height:30px;
+  font-family: 'IRANSans';
+  text-align: center;
+}
+@keyframes anirag{
+  0%   {background: linear-gradient(to left,white,blue,white,white,blue,white);}
+  25%  {background: linear-gradient(to left,white,green,white,white,green,white);}
+  50%  {background: linear-gradient(to left,white,red,white,white,red,white);}
+  100% {background: linear-gradient(to left,white,yellow,white,white,yellow,white);}
 }

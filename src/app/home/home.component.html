@@ -28,12 +28,48 @@
     
   </div>
 </div>
-<div [ngStyle]="{'height.px':200,'background-image': styleservice.Flag ?  'linear-gradient(to bottom,white,rgb(216,11,54,1))' : 'linear-gradient(to bottom,white,#3f51b5)'}"></div>
+
+
+<div [ngStyle]="{'height.px':200,'background-image': styleservice.Flag ?  'linear-gradient(to bottom,white,rgb(0, 93, 103))' : 'linear-gradient(to bottom,white,#3f51b5)'}"></div>
+<div [ngClass]="{'lastnewsheader' : styleservice.Flag == true,
+                'lastnewsheader-v2': styleservice.Flag == false}">
+    مطالب آموزشی جدید <i class="fa fa-rss" aria-hidden="true"></i>
+</div>
+<div [ngStyle]="{'background-color': styleservice.Flag ? 'rgb(0, 93, 103)' : '#3f51b5'}">
+    <div class="row lastnewsbody">
+        <div class="col-md-3" >
+            <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/clinicc.jpg" alt=""></div>
+            <div class="lastnewstitle">رژیم غذایی بیماران ام اس</div>
+        </div>
+        <div class="col-md-3" >
+          <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/clinicc.jpg" alt=""></div>
+          <div class="lastnewstitle">رژیم غذایی بیماران ام اس</div>
+        </div>
+        <div class="col-md-3" >
+          <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/clinicc.jpg" alt=""></div>
+          <div class="lastnewstitle">رژیم غذایی بیماران ام اس</div>
+        </div>
+        <div class="col-md-3" >
+            <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/clinicc.jpg" alt=""></div>
+            <div class="lastnewstitle">رژیم غذایی بیماران ام اس</div>
+          </div>
+  </div>
+</div>
+<div [ngClass]="{'lastnewsfooter' : styleservice.Flag == true,
+                 'lastnewsfooter-v2': styleservice.Flag == false}">
+    <button [ngClass]="{'btn btn-primary' : styleservice.Flag == true,
+                        'btn btn-danger': styleservice.Flag == false}" style="width:50%;height:40px;">بیشتر +</button>
+</div>
+<div [ngStyle]="{'height.px':200,'background-image': styleservice.Flag ?  'linear-gradient(to top,white,rgb(0, 93, 103))' : 'linear-gradient(to top,white,#3f51b5)'}"></div>
+
+
+
+<div [ngStyle]="{'height.px':200,'background-image': styleservice.Flag ?  'linear-gradient(to bottom,white,rgb(0, 93, 103))' : 'linear-gradient(to bottom,white,#3f51b5)'}"></div>
 <div [ngClass]="{'lastnewsheader' : styleservice.Flag == true,
                 'lastnewsheader-v2': styleservice.Flag == false}">
     اخبار جدید <i class="fa fa-rss" aria-hidden="true"></i>
 </div>
-<div [ngStyle]="{'background-color': styleservice.Flag ? 'rgb(216,11,54,1)' : '#3f51b5'}">
+<div [ngStyle]="{'background-color': styleservice.Flag ? 'rgb(0, 93, 103)' : '#3f51b5'}">
     <div class="row lastnewsbody">
         <div class="col-md-3" >
             <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/ms.jpg" alt=""></div>
@@ -58,20 +94,26 @@
     <button [ngClass]="{'btn btn-primary' : styleservice.Flag == true,
                         'btn btn-danger': styleservice.Flag == false}" style="width:50%;height:40px;">بیشتر +</button>
 </div>
-<div [ngStyle]="{'height.px':730,'background-image': styleservice.Flag ?  'linear-gradient(to top, rgba(0, 0, 0, 0.705), white,white,white,rgb(216,11,54,1))' : 'linear-gradient(to top, rgba(0, 0, 0, 0.705), white,white,white,#3f51b5)'}">
+
+
+
+
+<div [ngStyle]="{'height.px':730,'background-image': styleservice.Flag ?  'linear-gradient(to top, #114178, white,white,white,rgb(0, 93, 103)' : 'linear-gradient(to top, #114178, white,white,white,#3f51b5)'}">
+  <div style="height:300px;" ></div>
+  <div >
+    <div class="raghs">عضویت در خبرنامه</div>
+    <div class="newletter" dir="rtl" >
+      <div class="container" >
+          <div class="col-lg-6 mx-auto">
+          <mat-form-field >
+              <input  matInput #Email="ngModel" ngModel placeholder="پست الکترونیکی"  required>
+              <mat-icon matSuffix> <i class="fa fa-paper-plane" aria-hidden="true"></i></mat-icon>
+              <mat-error *ngIf="Email.invalid">ایمیل نامعتبر است</mat-error>
+            </mat-form-field>
+          </div>
+      </div>
+     </div>
+  </div>
   <div style="height:300px;"></div>
-  <div style="height:30px;font-family: 'IRANSans';text-align: center">عضویت در خبرنامه</div>
-  <div class="newletter" dir="rtl">
-    <div class="container">
-        <div class="col-lg-6 mx-auto">
-        <mat-form-field >
-            <input  matInput #Email="ngModel" ngModel placeholder="پست الکترونیکی"  required>
-            <mat-icon matSuffix> <i class="fa fa-paper-plane" aria-hidden="true"></i></mat-icon>
-            <mat-error *ngIf="Email.invalid">ایمیل نامعتبر است</mat-error>
-          </mat-form-field>
-        </div>
-    </div>
-   </div>
-   <div style="height:300px;"></div>
 </div>
 <app-footer></app-footer>

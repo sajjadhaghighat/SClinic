@@ -4,7 +4,7 @@
 <div [ngClass]="{'titlediv1' : styleservice.Flag == true,
                  'titlediv1-v2': styleservice.Flag == false}">
   <div class="titleindiv1">
-      CLINIC
+      SPECIAL CLINIC
   </div>
   <div>
     <div style="height:40px"> </div>
@@ -22,12 +22,14 @@
 </div>
 <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
                  'titlediv2-v2': styleservice.Flag == false}">
-                 <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> مشاوره پزشکی</button></a>
+                 <a [routerLink]="['/visit']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> مشاوره پزشکی</button></a>
                  <a [routerLink]="['/news']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> اخبار</button></a>
                  <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button ><i class="fa fa-bolt" aria-hidden="true"></i> مطالب آموزشی</button></a>
                  <a [routerLink]="['/']" routerLinkActive="router-link-active"><button mat-button ><i class="fa fa-bolt" aria-hidden="true" ></i> گالری</button></a>
                  <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> فارماکوپه دارویی</button></a>
                  <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> لیست بیمارستان ها و مراکز درمانی </button></a>             
-    <i style="cursor: pointer;" (click)="styleservice.styleChange()" aria-hidden="true">تغییر تم</i>
+                 <a [routerLink]="['/admin']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> ادمین</button></a>             
+
+                 <i style="cursor: pointer;" (click)="styleservice.styleChange()" aria-hidden="true">تغییر تم</i>
 </div>
 
