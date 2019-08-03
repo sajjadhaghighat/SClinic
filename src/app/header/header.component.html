@@ -3,33 +3,49 @@
 </div>
 <div [ngClass]="{'titlediv1' : styleservice.Flag == true,
                  'titlediv1-v2': styleservice.Flag == false}">
-  <div class="titleindiv1">
-      SPECIAL CLINIC
-  </div>
-  <div>
-    <div style="height:40px"> </div>
-    <div class="titleindiv2"> 
-        <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-home" aria-hidden="true"></i> خانه / Home</button></a>
-        <a [routerLink]="['/register-tab']" routerLinkActive="router-link-active" ><button mat-button ><i class="fa fa-user-plus" aria-hidden="true"></i> عضویت / Register</button></a>
-        <button mat-button data-toggle="modal" data-target="#eModal1"><i class="fa fa-sign-in" aria-hidden="true" ></i> ورود / Login</button>
-        <a [routerLink]="['/about-us']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-address-card-o" aria-hidden="true"></i> درباره ما / About us</button></a>
-        <a [routerLink]="['/contact-us']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-phone" aria-hidden="true"></i> تماس با ما / Contact us</button></a>
+  <div class="form-row" dir="rtl">
+    <div class="col-md-3 neon">
+      <p (click)="styleservice.styleChange()" style="cursor: pointer">SPECIAL CLINIC</p>
     </div>
-    <app-login></app-login>
-    <div style="height:40px"> </div>
-    
-  </div>
+    <div class="col-md-9">
+      <div style="height:40px"> </div>
+      <div class="titleindiv2"> 
+          <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-home" aria-hidden="true"></i> خانه / Home</button></a>
+          <a *ngIf="!cookie.check('role')" [routerLink]="['/register-tab']" routerLinkActive="router-link-active" ><button mat-button ><i class="fa fa-user-plus" aria-hidden="true"></i> عضویت / Register</button></a>
+          <button *ngIf="!cookie.check('role')" mat-button data-toggle="modal" data-target="#eModal1"><i class="fa fa-sign-in" aria-hidden="true" ></i> ورود / Login</button>
+          <a [routerLink]="['/about-us']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-address-card-o" aria-hidden="true"></i> درباره ما / About us</button></a>
+          <a [routerLink]="['/contact-us']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-phone" aria-hidden="true"></i> تماس با ما / Contact us</button></a>
+          <a *ngIf="cookie.check('role')" (click)="signOut()" ><button mat-button><i class="fa fa-sign-out" aria-hidden="true"></i> خروج / Exit</button></a>
+      </div>
+      <app-login></app-login>
+      <div style="height:40px"> </div>
+      
+    </div>
+  </div>               
+  
+  
 </div>
 <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
                  'titlediv2-v2': styleservice.Flag == false}">
-                 <a [routerLink]="['/visit']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> مشاوره پزشکی</button></a>
+                 <button *ngIf="cookie.get('role') == 'admin'" mat-button [matMenuTriggerFor]="menu1">{{cookie.get('name')}}</button>
+                  <mat-menu #menu1="matMenu">
+                    <a [routerLink]="['/admin']" routerLinkActive="router-link-active" ><button class="bstyle" mat-menu-item><i class="fa fa-bolt" aria-hidden="true"></i> پنل مدیریت</button></a>  
+                  </mat-menu>
+
+                  <button *ngIf="cookie.get('role') == 'user'" mat-button [matMenuTriggerFor]="menu2">{{cookie.get('name')}}</button>
+                  <mat-menu #menu2="matMenu">
+                    <a [routerLink]="['/user-panel']" routerLinkActive="router-link-active" ><button class="bstyle" mat-menu-item><i class="fa fa-bolt" aria-hidden="true"></i> پنل شخصی</button></a>  
+                  </mat-menu>
+
+                  <button *ngIf="cookie.get('role') == 'doctor'" mat-button [matMenuTriggerFor]="menu3">{{cookie.get('name')}}</button>
+                  <mat-menu #menu3="matMenu">
+                    <a [routerLink]="['/doctor-panel']" routerLinkActive="router-link-active" ><button class="bstyle" mat-menu-item><i class="fa fa-bolt" aria-hidden="true"></i> پنل شخصی</button></a>  
+                  </mat-menu>
+
+                 <a *ngIf="cookie.get('role')=='user'" [routerLink]="['/visit']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> مشاوره پزشکی</button></a>
                  <a [routerLink]="['/news']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> اخبار</button></a>
                  <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button ><i class="fa fa-bolt" aria-hidden="true"></i> مطالب آموزشی</button></a>
-                 <a [routerLink]="['/']" routerLinkActive="router-link-active"><button mat-button ><i class="fa fa-bolt" aria-hidden="true" ></i> گالری</button></a>
-                 <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> فارماکوپه دارویی</button></a>
-                 <a [routerLink]="['/']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> لیست بیمارستان ها و مراکز درمانی </button></a>             
-                 <a [routerLink]="['/admin']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> ادمین</button></a>             
-
-                 <i style="cursor: pointer;" (click)="styleservice.styleChange()" aria-hidden="true">تغییر تم</i>
+                 <a [routerLink]="['/doctors-list']" routerLinkActive="router-link-active" ><button mat-button><i class="fa fa-bolt" aria-hidden="true"></i> فهرست پزشکان</button></a>
+                            
 </div>
 

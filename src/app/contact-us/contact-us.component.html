@@ -19,19 +19,19 @@
                   
                 <h3>فرم ارسال پیام</h3>    
         </div>
-        <form action="" #ContactForm>
+        <form #ContactForm="ngForm" (ngSubmit)="onSubmit(ContactForm)">
         
          <div class="col-lg-8 mx-auto">
                 <mat-form-field class="full-width">
-                        <input type="text" #Name="ngModel" name="Name" ngModel matInput  placeholder="نام و نام خانوادگی" required>
+                        <input type="text" #Name="ngModel" name="Cname" ngModel matInput  placeholder="نام و نام خانوادگی" required>
                         <mat-error *ngIf="Name.invalid">نام و نام خانوادگی را وارد کنید</mat-error>
                 </mat-form-field>
                 <mat-form-field class="full-width">
-                        <input type="text" #Email="ngModel" name="Email" ngModel matInput  placeholder="پست الکترونیکی" required>
+                        <input type="text" #Email="ngModel" name="Cemail" ngModel matInput  placeholder="پست الکترونیکی" required>
                         <mat-error *ngIf="Email.invalid">ایمیل را وارد کنید</mat-error>
                 </mat-form-field>  
                 <mat-form-field class="full-width">
-                        <textarea #Message="ngModel" name="Message" ngModel matInput  placeholder="متن پیام" required></textarea>
+                        <textarea #Message="ngModel" name="Ctext" ngModel matInput  placeholder="متن پیام" required></textarea>
                         <mat-error *ngIf="Message.invalid">متن پیام را وارد کنید</mat-error>
                 </mat-form-field>  
                 <button  type="submit" [disabled]="!ContactForm.valid" class="btn btn-lg btn-block btn-info" style="margin-top:100px"  [title]="!ContactForm.valid ? 'فرم را به طور کامل پر کنید' : ''">ارسال پیام <i class="fa fa-paper-plane" aria-hidden="true"></i></button>    

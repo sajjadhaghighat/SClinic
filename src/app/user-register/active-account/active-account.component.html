@@ -1,0 +1,19 @@
+<div class="container">
+  <div  class="header" *ngIf="error">
+        <h1>حساب کاربری شما فعال شده است</h1>
+  </div>
+  <div *ngIf="error" class="rheader" style="text-align:center">
+      <a [routerLink]="['/']" routerLinkActive="router-link-active" ><h4>برگشت به سایت</h4></a>
+  </div>    
+  <div  class="aheader" *ngIf="flag">
+      <h1>حساب کاربری شما فعال شد </h1>
+  </div>
+  <div *ngIf="flag" class="rheader" style="text-align:center">
+      <h3>... در حال انتقال به صفحه اصلی</h3>
+      <h4>{{array}}</h4>
+  </div>
+  <div *ngIf="!flag && !error" class="fheader">
+  <h1 (click)="update()">جهت فعالسازی اکانت خود اینجا کلیک کنید</h1>
+  </div>
+  
+</div>

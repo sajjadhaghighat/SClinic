@@ -8,7 +8,7 @@
             <i class="fa fa-user-md" aria-hidden="true"></i>
     </div>
         
-    <form #DRegisterForm="ngForm" >
+    <form #DRegisterForm="ngForm" (ngSubmit)="onSubmit(DRegisterForm)">
         <!--بخش اطلاعات شخصی کاربر-->
         <div class="form-row">
             <h4><strong>اطلاعات پزشک</strong></h4>
@@ -18,7 +18,7 @@
            
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="text" #Dname="ngModel" name="Dname" ngModel matInput  placeholder="نام و نام خانوداگی" required>
+                    <input type="text" #Dname="ngModel" name="FULLname" ngModel matInput  placeholder="نام و نام خانوادگی" required>
                     <mat-error *ngIf="Dname.invalid">نام و نام خانوادگی را وارد کنید</mat-error>
                     
                 </mat-form-field>
@@ -26,14 +26,14 @@
             </div>
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="email" #DEmail="ngModel" name="DEmail" ngModel matInput  placeholder="آدرس ایمیل (عدم نمایش عمومی)" required>
+                    <input type="email" #DEmail="ngModel" name="Email" ngModel matInput  placeholder="آدرس ایمیل (عدم نمایش عمومی)" required>
                     <mat-error >example@mail.com</mat-error>
                     <mat-error *ngIf="DEmail.invalid">ایمیل را وارد کنید</mat-error>
                 </mat-form-field>
             </div>
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                        <input type="text" #DPhone="ngModel" name="DPhone" ngModel matInput  placeholder="شماره همراه شخصی (عدم نمایش عمومی)" required>
+                        <input type="text" #DPhone="ngModel" name="Mobile" ngModel matInput  placeholder="شماره همراه شخصی (عدم نمایش عمومی)" required>
                         <mat-error *ngIf="DPhone.invalid">شماره تلفن را وارد کنید</mat-error>
                         
                 </mat-form-field>
@@ -43,7 +43,7 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                        <input type="text" #Cwork="ngModel" name="Cwork" ngModel matInput  placeholder="شهر محل کار" required>
+                        <input type="text" #Cwork="ngModel" name="Workcity" ngModel matInput  placeholder="شهر محل کار" required>
                         <mat-error *ngIf="Cwork.invalid">شهر را وارد کنید</mat-error>
                         
                 </mat-form-field>
@@ -51,7 +51,7 @@
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
                         <mat-label>جنسیت</mat-label>
-                        <mat-select #SEX="ngModel" name="SEX" ngModel required>
+                        <mat-select #SEX="ngModel" name="DSex" ngModel required>
                           <mat-option value="مرد">مرد</mat-option>
                           <mat-option value="زن">زن</mat-option>
                         </mat-select>
@@ -62,7 +62,7 @@
             <div class="form-group col-md-4">
                     <mat-form-field class="full-width">
                             <mat-label>صفحه اختصاصی برای کیست؟</mat-label>
-                            <mat-select #DPage="ngModel" name="DPage" ngModel required>
+                            <mat-select #DPage="ngModel" name="Proprietary" ngModel required>
                                     <mat-option value="دکترا">برای مطب دکتر است</mat-option>
                                     <mat-option value="دکترای تخصصی">برای مطب دکترای تخصصی است</mat-option>
                                     <mat-option value="متخصص">برای دکتر متخصص است</mat-option>
@@ -89,64 +89,57 @@
                         <mat-label>شاخه فعالیت / تخصص</mat-label>
                         <mat-select #Expert="ngModel" name="Expert" ngModel required>
                           
-                            <mat-option value="19">جراح عمومی</mat-option>
-                            <mat-option value="20">فوق تخصص جراحی پلاستیک،ترمیمی و زیبایی</mat-option>
-                            <mat-option value="21">فوق تخصص جراحی قلب</mat-option>
-                            <mat-option value="22">فوق تخصص جراحی عروق و تروما</mat-option>
-                            <mat-option value="23">فوق تخصص جراحی اطفال</mat-option>
-                            <mat-option value="24">فوق تخصص جراحی قفسه سینه</mat-option>
-                            <mat-option value="25">جراح و متخصص ارتوپدی</mat-option>
-                            <mat-option value="26">جراح و متخصص زنان و زایمان</mat-option>
-                            <mat-option value="27">جراح کلیه و مجاری ادراری (اورولوژی)</mat-option>
-                            <mat-option value="28">جراح مغز و اعصاب و ستون فقرات</mat-option>
-                            <mat-option value="29">جراح و متخصص گوش و حلق و بینی</mat-option>
-                            <mat-option value="30">جراح و متخصص چشم</mat-option>
-                            <mat-option value="53">فوق تخصص جراحی حنجره</mat-option>
-                            <mat-option value="1">متخصص راديولوژى</mat-option>
-                            <mat-option value="2">متخصص رادیوتراپی (پرتودرمانی)</mat-option>
-                            <mat-option value="3">متخصص قلب و عروق</mat-option>
-                            <mat-option value="4">متخصص اعصاب و روان (روانپزشک)</mat-option>
-                            <mat-option value="5">متخصص بيمارى هاى عفونى</mat-option>
-                            <mat-option value="6">متخصص مغز و اعصاب (نورولوژی)</mat-option>
-                            <mat-option value="7">متخصص پوست، مو و زيبايى</mat-option>
-                            <mat-option value="8">متخصص بیماری های کودکان (اطفال)</mat-option>
-                            <mat-option value="9">متخصص بيهوشى</mat-option>
-                            <mat-option value="10">متخصص پاتولوژى و علوم آزمايشگاهى</mat-option>
-                            <mat-option value="11">متخصص پاتولوژى قانونى و مسموميت</mat-option>
-                            <mat-option value="50">متخصص طب فیزیکی و توانبخشی</mat-option>
-                            <mat-option value="12">متخصص داخلى</mat-option>
-                            <mat-option value="13">فوق تخصص مفاصل و عضلات (روماتولوژى)</mat-option>
-                            <mat-option value="14">فوق تخصص کليه و مجارى ادرارى</mat-option>
-                            <mat-option value="15">فوق تخصص گوارش و كبد</mat-option>
-                            <mat-option value="16">فوق تخصص ریه</mat-option>
-                            <mat-option value="17">فوق تخصص خون و سرطان</mat-option>
-                            <mat-option value="52">فوق تخصص درد</mat-option>
-                            <mat-option value="18">فوق تخصص غدد درون ریز و متابولیسم</mat-option>
-                            <mat-option value="57">متخصص ایمپلنت و پروتزهای دندانی</mat-option>
-                            <mat-option value="56">متخصص جراحی لثه</mat-option>
-                            <mat-option value="58">متخصص بیماری های دهان</mat-option>
-                            <mat-option value="32">دندانپزشک عمومی</mat-option>
-                            <mat-option value="33">جراح دهان و فک و صورت</mat-option>
-                            <mat-option value="31">متخصص درمان ریشه دندان</mat-option>
-                            <mat-option value="47">متخصص دندانپزشکی ترمیمی</mat-option>
-                            <mat-option value="34">متخصص ارتودنسی</mat-option>
-                            <mat-option value="35">متخصص دندانپزشکی اطفال</mat-option>
-                            <mat-option value="36">فیزیوتراپی</mat-option>
-                            <mat-option value="38">روانشناس</mat-option>
-                            <mat-option value="37">متخصص تغذیه</mat-option>
-                            <mat-option value="39">ترک اعتیاد</mat-option>
-                            <mat-option value="48">پزشک عمومی</mat-option>
-                            <mat-option value="51">پزشک خانواده</mat-option>
-                            <mat-option value="49">طب سوزنی</mat-option>
-                            <mat-option value="45">دامپزشک</mat-option>
-                            <mat-option value="41">کلینیک درمانگاه</mat-option>
-                            <mat-option value="40">بیمارستان</mat-option>
-                            <mat-option value="42">آزمایشگاه</mat-option>
-                            <mat-option value="54">کلینیک خواب</mat-option>
-                            <mat-option value="43">مرکز تصویر برداری</mat-option>
-                            <mat-option value="44">داروخانه</mat-option>
-                            <mat-option value="46">انجمن علمی</mat-option>
-                            <mat-option value="55">مامایی</mat-option>  
+                            <mat-option value="جراح عمومی">جراح عمومی</mat-option>
+                            <mat-option value="فوق تخصص جراحی پلاستیک،ترمیمی و زیبایی">فوق تخصص جراحی پلاستیک،ترمیمی و زیبایی</mat-option>
+                            <mat-option value="فوق تخصص جراحی قلب">فوق تخصص جراحی قلب</mat-option>
+                            <mat-option value="فوق تخصص جراحی عروق و تروما">فوق تخصص جراحی عروق و تروما</mat-option>
+                            <mat-option value="فوق تخصص جراحی اطفال">فوق تخصص جراحی اطفال</mat-option>
+                            <mat-option value="فوق تخصص جراحی قفسه سینه">فوق تخصص جراحی قفسه سینه</mat-option>
+                            <mat-option value="جراح و متخصص ارتوپدی">جراح و متخصص ارتوپدی</mat-option>
+                            <mat-option value="جراح و متخصص زنان و زایمان">جراح و متخصص زنان و زایمان</mat-option>
+                            <mat-option value="جراح کلیه و مجاری ادراری">جراح کلیه و مجاری ادراری (اورولوژی)</mat-option>
+                            <mat-option value="جراح مغز و اعصاب و ستون فقرات">جراح مغز و اعصاب و ستون فقرات</mat-option>
+                            <mat-option value="جراح و متخصص گوش و حلق و بینی">جراح و متخصص گوش و حلق و بینی</mat-option>
+                            <mat-option value="جراح و متخصص چشم">جراح و متخصص چشم</mat-option>
+                            <mat-option value="فوق تخصص جراحی حنجره">فوق تخصص جراحی حنجره</mat-option>
+                            <mat-option value="متخصص راديولوژى">متخصص راديولوژى</mat-option>
+                            <mat-option value="متخصص رادیوتراپی">متخصص رادیوتراپی (پرتودرمانی)</mat-option>
+                            <mat-option value="متخصص قلب و عروق">متخصص قلب و عروق</mat-option>
+                            <mat-option value="متخصص اعصاب و روان">متخصص اعصاب و روان (روانپزشک)</mat-option>
+                            <mat-option value="متخصص بيمارى هاى عفونى">متخصص بيمارى هاى عفونى</mat-option>
+                            <mat-option value="متخصص مغز و اعصاب">متخصص مغز و اعصاب (نورولوژی)</mat-option>
+                            <mat-option value="متخصص پوست، مو و زيبايى">متخصص پوست، مو و زيبايى</mat-option>
+                            <mat-option value="متخصص بیماری های کودکان">متخصص بیماری های کودکان (اطفال)</mat-option>
+                            <mat-option value="متخصص بيهوشى">متخصص بيهوشى</mat-option>
+                            <mat-option value="متخصص پاتولوژى و علوم آزمايشگاهى">متخصص پاتولوژى و علوم آزمايشگاهى</mat-option>
+                            <mat-option value="متخصص پاتولوژى قانونى و مسموميت">متخصص پاتولوژى قانونى و مسموميت</mat-option>
+                            <mat-option value="متخصص طب فیزیکی و توانبخشی">متخصص طب فیزیکی و توانبخشی</mat-option>
+                            <mat-option value="متخصص داخلى">متخصص داخلى</mat-option>
+                            <mat-option value="فوق تخصص مفاصل و عضلات">فوق تخصص مفاصل و عضلات (روماتولوژى)</mat-option>
+                            <mat-option value="فوق تخصص کليه و مجارى ادرارى">فوق تخصص کليه و مجارى ادرارى</mat-option>
+                            <mat-option value="فوق تخصص گوارش و كبد">فوق تخصص گوارش و كبد</mat-option>
+                            <mat-option value="فوق تخصص ریه">فوق تخصص ریه</mat-option>
+                            <mat-option value="فوق تخصص خون و سرطان">فوق تخصص خون و سرطان</mat-option>
+                            <mat-option value="فوق تخصص درد">فوق تخصص درد</mat-option>
+                            <mat-option value="فوق تخصص غدد درون ریز و متابولیسم">فوق تخصص غدد درون ریز و متابولیسم</mat-option>
+                            <mat-option value="متخصص ایمپلنت و پروتزهای دندانی">متخصص ایمپلنت و پروتزهای دندانی</mat-option>
+                            <mat-option value="متخصص جراحی لثه">متخصص جراحی لثه</mat-option>
+                            <mat-option value="متخصص بیماری های دهان">متخصص بیماری های دهان</mat-option>
+                            <mat-option value="دندانپزشک عمومی">دندانپزشک عمومی</mat-option>
+                            <mat-option value="جراح دهان و فک و صورت">جراح دهان و فک و صورت</mat-option>
+                            <mat-option value="متخصص درمان ریشه دندان">متخصص درمان ریشه دندان</mat-option>
+                            <mat-option value="متخصص دندانپزشکی ترمیمی">متخصص دندانپزشکی ترمیمی</mat-option>
+                            <mat-option value="متخصص ارتودنسی">متخصص ارتودنسی</mat-option>
+                            <mat-option value="متخصص دندانپزشکی اطفال">متخصص دندانپزشکی اطفال</mat-option>
+                            <mat-option value="فیزیوتراپی">فیزیوتراپی</mat-option>
+                            <mat-option value="روانشناس">روانشناس</mat-option>
+                            <mat-option value="متخصص تغذیه">متخصص تغذیه</mat-option>
+                            <mat-option value="ترک اعتیاد">ترک اعتیاد</mat-option>
+                            <mat-option value="پزشک عمومی">پزشک عمومی</mat-option>
+                            <mat-option value="پزشک خانواده">پزشک خانواده</mat-option>
+                            <mat-option value="طب سوزنی">طب سوزنی</mat-option>
+                            <mat-option value="دامپزشک">دامپزشک</mat-option>
+                            
                         </mat-select>
                         <mat-error *ngIf="Expert.invalid">جنسیت را انتخاب کنید</mat-error>
                       </mat-form-field>
@@ -162,7 +155,7 @@
            
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="text" #Pwork="ngModel" name="Pwork" ngModel matInput  placeholder="نام محل کار" required>
+                    <input type="text" #Pwork="ngModel" name="Workname" ngModel matInput  placeholder="نام محل کار" required>
                     <mat-error *ngIf="Pwork.invalid"> نام محل کار را وارد کنید</mat-error>
                     
                 </mat-form-field>
@@ -170,13 +163,13 @@
             </div>
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="email" #Telephone="ngModel" name="Telephone" ngModel matInput  placeholder="تلفن محل کار" required>
+                    <input type="email" #Telephone="ngModel" name="Workphone" ngModel matInput  placeholder="تلفن محل کار" required>
                     <mat-error *ngIf="Telephone.invalid">تلفن محل کار را وارد کنید</mat-error>
                 </mat-form-field>
             </div>
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                        <textarea type="text" #Maddress="ngModel" name="Maddress" ngModel matInput  placeholder="آدرس محل کار" required></textarea>
+                        <textarea type="text" #Maddress="ngModel" name="Workaddress" ngModel matInput  placeholder="آدرس محل کار" required></textarea>
                         <mat-error *ngIf="Maddress.invalid">آدرس محل کار را وارد کنید</mat-error>
                         
                 </mat-form-field>
@@ -195,14 +188,14 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input matInput type="text" #DUsername="ngModel" name="DUsername" ngModel   placeholder="شناسه کاربری" required>
+                    <input matInput type="text" #DUsername="ngModel" name="Username" ngModel (change)="checkExistDUsername(DUsername.value)"  placeholder="شناسه کاربری" required>
                     <mat-icon matSuffix><i class="fa fa-user-circle-o" aria-hidden="true"></i></mat-icon>
                     <mat-error *ngIf="DUsername.invalid">شناسه کاربری را وارد کنید</mat-error>
                 </mat-form-field>
             </div>
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="password" #DPassword="ngModel" name="DPassword" ngModel matInput  placeholder="رمز عبور" required>
+                    <input type="password" #DPassword="ngModel" name="Password" ngModel matInput  placeholder="رمز عبور" required>
                     <mat-icon matSuffix><i class="fa fa-key" aria-hidden="true"></i></mat-icon>
                     <mat-error *ngIf="DPassword.invalid">رمز عبور را وارد کنید</mat-error>
                 </mat-form-field>
@@ -219,7 +212,7 @@
         <div class="form-row" style="margin-top:50px;">
                 <div class="form-group col-md-3"></div>
                 <div class="form-group col-md-3">
-                        <button  type="submit" [disabled]="!DRegisterForm.valid" class="btn btn-lg btn-block btn-info"  [title]="!DRegisterForm.valid ? 'فرم را به طور کامل پر کنید' : ''">ثبت اطلاعات <i class="fa fa-floppy-o"></i></button>
+                        <button  type="submit" [disabled]="!DRegisterForm.valid || !DUsernameflag" class="btn btn-lg btn-block btn-info"  [title]="(!DRegisterForm.valid || !DUsernameflag) ? 'فرم را به طور کامل پر کنید' : ''">ثبت اطلاعات <i class="fa fa-floppy-o"></i></button>
                 </div>
                 <div class="form-group col-md-3">
                         <button type="button"class="btn btn-lg btn-block btn-secondary" >تکرار <i class="fa fa-repeat"></i></button>

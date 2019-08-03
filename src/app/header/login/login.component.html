@@ -12,31 +12,33 @@
                 <h5  class="modal-title" id="exampleModalLabel" >ورود به حساب</h5>
               </div>
           </div>
-          <div class="modal-body" >
-            <div  dir="rtl"  >
-                <div style="text-align:center;font-size:100px">
-                        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
-                </div>
-                <mat-form-field [ngStyle]="inputstyle">
-                    <input  matInput #Username="ngModel" ngModel placeholder="نام کاربری / Username"  required>
-                    <mat-icon matSuffix><i class="fa fa-user-o" aria-hidden="true"></i></mat-icon>
-                    <mat-error *ngIf="Username.invalid">وارد کردن نام کاربری ضروری است</mat-error>
-                  </mat-form-field>
-                  <mat-form-field [ngStyle]="inputstyle">
-                    <input type="password"  matInput #Password="ngModel" ngModel placeholder="گذرواژه / Password"  required>
-                    <mat-icon matSuffix><i class="fa fa-key" aria-hidden="true"></i></mat-icon>
-                    <mat-error *ngIf="Password.invalid"> وارد کردن گذرواژه ضروری است</mat-error>
-                  </mat-form-field>
-            </div>
-          </div>
-          <div class="modal-footer" dir="rtl" >
-                <div class="col-md-6" >
-                    <button style="width: 100%;" type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
-                </div>
-                <div class="col-md-6" >
-                    <button style="width: 100%;" type="button" class="btn btn-primary" >ورود</button>
+          <form #LoginForm="ngForm" (ngSubmit)="onSubmit(LoginForm)">
+            <div class="modal-body" >
+              <div  dir="rtl"  >
+                  <div style="text-align:center;font-size:100px">
+                          <i class="fa fa-user-circle-o" aria-hidden="true"></i>
                   </div>
-           </div>
+                  <mat-form-field [ngStyle]="inputstyle">
+                      <input  matInput #Username="ngModel" name="Username" ngModel placeholder="نام کاربری / Username"  required>
+                      <mat-icon matSuffix><i class="fa fa-user-o" aria-hidden="true"></i></mat-icon>
+                      <mat-error *ngIf="Username.invalid">وارد کردن نام کاربری ضروری است</mat-error>
+                    </mat-form-field>
+                    <mat-form-field [ngStyle]="inputstyle">
+                      <input type="password"  matInput #Password="ngModel" name="Password" ngModel placeholder="گذرواژه / Password"  required>
+                      <mat-icon matSuffix><i class="fa fa-key" aria-hidden="true"></i></mat-icon>
+                      <mat-error *ngIf="Password.invalid"> وارد کردن گذرواژه ضروری است</mat-error>
+                    </mat-form-field>
+              </div>
+            </div>
+            <div class="modal-footer" dir="rtl" >
+                  <div class="col-md-6" >
+                      <button type="button" style="width: 100%;" class="btn btn-secondary" data-dismiss="modal">برگشت</button>
+                  </div>
+                  <div class="col-md-6" >
+                      <button type="button" (click)="onSubmit(LoginForm)" style="width: 100%;" class="btn btn-primary" data-dismiss="modal">ورود</button>
+                    </div>
+             </div>
+          </form>
       </div>
   </div>
 </div>

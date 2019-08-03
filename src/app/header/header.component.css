@@ -24,13 +24,13 @@
   }
 
 .titlediv1{
-    background-color: rgb(216,11,54,1)!important;
+    background-color: rgb(216, 11, 55) !important;
     min-height: 120px;
     padding-right: 2%;
     
 }
 .titlediv1-v2{
-    background-color: #a51e2c!important;
+    background-color: #a51e2c !important;
     min-height: 120px;
     padding-right: 2%;
     
@@ -41,17 +41,31 @@
     padding-top: 30px;
     min-width: 10%;
     height: 80px;
-    color: whitesmoke;
-    font-size: 30px;
-    font-weight: 500;
+ 
+    
     
 }
-
+.neon{
+    text-align: center;
+    padding-top: 30px;
+    color: #fff;
+    font-size: 2em;
+    text-shadow:
+      0 0  5px #fff, 
+      0 0  10px #fff, 
+      0 0  15px #fff, 
+      0 0  20px #0f0, 
+      0 0  35px #0f0, 
+      0 0  40px #0f0, 
+      0 0  60px #0f0, 
+      0 0  90px #0f0 
+  }
+  
 .titleindiv2{
     direction: rtl;
     min-height:40px; 
     text-align:right;
-    padding-right: 150px;
+    
     
 }
 .titleindiv2 button{
@@ -91,4 +105,9 @@
 }
 .titlediv2-v2 button:hover{
     border-bottom: 2px double white;
+}
+
+.bstyle{
+    font-family: 'IRANSans';
+    direction: rtl;
 }

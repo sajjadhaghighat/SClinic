@@ -1,0 +1,44 @@
+<app-header></app-header>
+<div class="header">
+        <h1>فهرست پزشکان</h1>
+</div>
+<div class="container">
+  <div *ngFor="let x of dService.doctorList">
+      <div class="row" dir="rtl">
+          <div class="col-md-2 divimg">
+            <i class="fa fa-user-md" aria-hidden="true"></i>
+          </div>
+          <div class="" class="col-md-10 divtext">
+            <div class="row" style="margin-top:20px;">
+              <div class="col-md-4">
+                  <h3>دکتر {{x.FULLname}}</h3>
+              </div>
+              <div class="col-md-4">
+                  <h6>تخصص : {{x.Expert}}</h6>
+              </div>
+              <div class="col-md-4">
+                  <h6>فلوشیپ : {{x.Floship}}</h6>
+              </div>
+            </div>
+            <div class="row" style="margin-top:20px;">
+              <div class="col-md-4">
+                  <h6>کد نظام پزشکی : {{x.MCC}}</h6>
+              </div>
+              <div class="col-md-4">
+                  <h6>آدرس مطب : {{x.Workaddress}}</h6>
+              </div>
+              <div class="col-md-4">
+                  <h6>تلفن مطب : {{x.Workphone}}</h6>
+              </div>
+            </div>
+            
+          </div>
+      </div>
+      <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+                   'titlediv2-v2': styleservice.Flag == false}">
+      </div>
+  </div>
+    
+</div>
+<br><br><br>
+<app-footer></app-footer>

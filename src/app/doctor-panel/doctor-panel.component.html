@@ -1,0 +1,16 @@
+<div class="header">
+  <h1>پنل کاربری</h1><h4>({{cookie.get('name')}})</h4>
+</div>
+<a [routerLink]="['/']" routerLinkActive="router-link-active" ><button class="btn btn-primary" style="font-family:'IRANSans';width: 100%">برگشت به صفحه اصلی</button></a>
+<div class="grids">
+  <mat-grid-list cols="4" rowHeight="100px">
+    <a  *ngFor="let tile of tiles" [routerLink]="[tile.link]"  >
+      <mat-grid-tile
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        {{tile.text}}
+      </mat-grid-tile>
+    </a>
+  </mat-grid-list>
+</div>

@@ -21,7 +21,7 @@ export class AdminComponent implements OnInit {
   tiles: Tile[] = [
     {text: 'مدیریت پزشکان', cols: 2, rows: 3, color: '#663399'},
     {text: 'مدیریت پست', cols: 2, rows: 3, color: '#008080'},
-    {text: 'تنظیمات', cols: 2, rows: 4, color: '#1E90FF'},
+    {text: 'مدیریت درخواست ها', cols: 2, rows: 4, color: '#1E90FF'},
     {text: 'مدیریت اعضا', cols: 2, rows: 2, color: '#2F4F4F'},
      {text: 'مدیریت ویزیت', cols: 2, rows: 2, color: '#696969'}
   ];

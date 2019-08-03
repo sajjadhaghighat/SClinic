@@ -8,7 +8,7 @@
         <i class="fa fa-id-card-o" aria-hidden="true"></i>
     </div>
         
-    <form #UserRegisterForm="ngForm" >
+    <form #UserRegisterForm="ngForm" (ngSubmit)="onSubmit(UserRegisterForm)">
         <!--بخش اطلاعات شخصی کاربر-->
         <div class="form-row">
             <h4><strong>اطلاعات کاربر</strong></h4>
@@ -18,21 +18,21 @@
            
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="text" #Firstname="ngModel" name="Firstname" ngModel matInput  placeholder="نام" required>
-                    <mat-error *ngIf="Firstname.invalid">نام را وارد کنید</mat-error>
+                    <input type="text" #Fname="ngModel" name="Fname" ngModel matInput [(ngModel)]="userService.selectedUser.Fname"  placeholder="نام" required>
+                    <mat-error *ngIf="Fname.invalid">نام را وارد کنید</mat-error>
                     
                 </mat-form-field>
                 
             </div>
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="text" #Lastname="ngModel" name="Lastname" ngModel matInput  placeholder="نام خانوادگی" required>
-                    <mat-error *ngIf="Lastname.invalid">نام خانوادگی را وارد کنید</mat-error>
+                    <input type="text" #Lname="ngModel" name="Lname" ngModel matInput [(ngModel)]="userService.selectedUser.Lname" placeholder="نام خانوادگی" required>
+                    <mat-error *ngIf="Lname.invalid">نام خانوادگی را وارد کنید</mat-error>
                 </mat-form-field>
             </div>
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="email" #Email="ngModel" name="Email" ngModel matInput  placeholder="ایمیل" required>
+                    <input type="email" #Email="ngModel" name="Email" ngModel (change)="checkExistsEmail()" matInput [(ngModel)]="userService.selectedUser.Email" placeholder="ایمیل" required>
                     <mat-error >example@mail.com</mat-error>
                     <mat-error *ngIf="Email.invalid">ایمیل را وارد کنید</mat-error>
                 </mat-form-field>
@@ -41,42 +41,23 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                     <mat-form-field class="full-width">
-                            <input type="text" #Phone="ngModel" name="Phone" ngModel matInput  placeholder="شماره تلفن" required>
+                            <input type="text" #Mobile="ngModel" name="Mobile" ngModel matInput [(ngModel)]="userService.selectedUser.Mobile" placeholder="شماره تلفن" required>
                             <mat-icon matSuffix><i class="fa fa-phone" aria-hidden="true"></i></mat-icon>
-                            <mat-error *ngIf="Phone.invalid">شماره تلفن را وارد کنید</mat-error>
+                            <mat-error *ngIf="Mobile.invalid">شماره تلفن را وارد کنید</mat-error>
                             
                     </mat-form-field>
             </div>
+            <div class="form-group col-md-4">
+                <mat-form-field class="full-width">
+                        <input type="text" #UNcode="ngModel" name="UNcode" ngModel (change)="checkExistsUNcode()" matInput [(ngModel)]="userService.selectedUser.UNcode" placeholder="کد ملی" required>
+                        <mat-error *ngIf="UNcode.invalid">کد ملی را وارد کنید</mat-error>
+                        
+                </mat-form-field>
+        </div>
             
         </div>
         <br>
-        <!--بخش اطلاعات بیماری کاربر-->
-        <div class="form-row">
-            <h4><strong>اطلاعات بیماری</strong></h4>
-        </div>
-        <br>
-        <div class="form-row">
-           
-            <div class="form-group col-md-6">
-                <mat-form-field class="full-width">
-                    <mat-label>نوع بیماری</mat-label>
-                    <mat-select [formControl]="pokemonControl" [(ngModel)]="show" style="font-family:'IRANSans'" required>
-                      <mat-option >-- انتخاب کنید --</mat-option>
-                      <mat-optgroup *ngFor="let group of pokemonGroups" [label]="group.name"
-                                    [disabled]="group.disabled">
-                        <mat-option *ngFor="let pokemon of group.pokemon" [value]="pokemon.value">
-                          {{pokemon.viewValue}}
-                        </mat-option>
-                      </mat-optgroup>
-                    </mat-select>
-                    <mat-icon matSuffix><i class="fa fa-stethoscope" aria-hidden="true"></i></mat-icon>
-                    <mat-error *ngIf="pokemonControl.hasError('required')">نوع بیماری را وارد کنید</mat-error>
-                  </mat-form-field>
-                  
-                  {{show}}
-            </div>
-        </div>
-        <br>
+        
         <!--بخش اطلاعات حساب کاربری کاربر-->
         <div class="form-row">
             <h4><strong>اطلاعات حساب</strong></h4>
@@ -85,14 +66,14 @@
         <div class="form-row">
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input matInput type="text" #Username1="ngModel" name="Username" ngModel   placeholder="شناسه کاربری" required>
+                    <input matInput type="text" #Username1="ngModel" name="Username" (change)="checkExistsUsername()" ngModel [(ngModel)]="userService.selectedAccount.Username"  placeholder="شناسه کاربری" required>
                     <mat-icon matSuffix><i class="fa fa-user-circle-o" aria-hidden="true"></i></mat-icon>
                     <mat-error *ngIf="Username1.invalid">شناسه کاربری را وارد کنید</mat-error>
                 </mat-form-field>
             </div>
             <div class="form-group col-md-4">
                 <mat-form-field class="full-width">
-                    <input type="password" #Password1="ngModel" name="Password" ngModel matInput  placeholder="رمز عبور" required>
+                    <input type="password" #Password1="ngModel" name="Password" ngModel matInput [(ngModel)]="userService.selectedAccount.Password"   placeholder="رمز عبور" required>
                     <mat-icon matSuffix><i class="fa fa-key" aria-hidden="true"></i></mat-icon>
                     <mat-error *ngIf="Password1.invalid">رمز عبور را وارد کنید</mat-error>
                 </mat-form-field>
@@ -109,10 +90,10 @@
         <div class="form-row" style="margin-top:50px;">
                 <div class="form-group col-md-3"></div>
                 <div class="form-group col-md-3">
-                        <button  type="submit" [disabled]="!UserRegisterForm.valid" class="btn btn-lg btn-block btn-info"  [title]="!UserRegisterForm.valid ? 'فرم را به طور کامل پر کنید' : ''">ثبت اطلاعات <i class="fa fa-floppy-o"></i></button>
+                        <button  type="submit" [disabled]="!UserRegisterForm.valid || !UNcodeflag || !Usernameflag || !Emailflag" class="btn btn-lg btn-block btn-info"  [title]="(!UserRegisterForm.valid || !UNcodeflag || !Usernameflag || !Emailflag) ? 'فرم را به طور کامل پر کنید' : ''">ثبت اطلاعات <i class="fa fa-floppy-o"></i></button>
                 </div>
                 <div class="form-group col-md-3">
-                        <button type="button"class="btn btn-lg btn-block btn-secondary" >تکرار <i class="fa fa-repeat"></i></button>
+                        <button type="button"class="btn btn-lg btn-block btn-secondary" (click)="resetForm(UserRegisterForm)">تکرار <i class="fa fa-repeat"></i></button>
                 </div>
                 <div class="form-group col-md-3"></div>
         </div>

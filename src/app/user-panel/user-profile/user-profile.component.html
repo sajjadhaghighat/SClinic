@@ -1,0 +1,52 @@
+<div class="header">
+<h1>پروفایل</h1>
+</div>
+<div class="container">
+<div class="divForm" dir="rtl">
+    <div class="logo">
+        <i class="fa fa-id-card-o" aria-hidden="true"></i>
+    </div>
+        
+    
+        <!--بخش اطلاعات شخصی کاربر-->
+        <div class="form-row">
+            <h4><strong>اطلاعات شخصی</strong></h4>
+        </div>
+        <br>
+        <div class="form-row">
+           
+            <div class="form-group col-md-6">
+                
+               <p><strong>نام و نام خانوادگی</strong></p>
+               <h6>{{uservice.selectedUser.Fname}} {{uservice.selectedUser.Lname}}</h6>
+            </div>
+            <div class="form-group col-md-6">
+                <p><strong>ایمیل</strong></p>
+                <h6>{{uservice.selectedUser.Email}}</h6>
+            </div>
+            
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+               <p><strong>کد ملی</strong></p>
+               <h6>{{uservice.selectedUser.UNcode}}</h6>
+            </div>
+            <div class="form-group col-md-6">
+              <p><strong>وضعیت حساب</strong></p>
+              <h6 *ngIf="uservice.selectedUser.IsValid">فعال</h6>
+              <h6 *ngIf="!uservice.selectedUser.IsValid">غیر فعال</h6>
+            </div>
+            
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+               <p><strong>شماره همراه</strong></p>
+               <h6>{{uservice.selectedUser.Mobile}}</h6>
+            </div>
+        </div>
+        
+        <br>
+        
+</div>
+   
+</div>

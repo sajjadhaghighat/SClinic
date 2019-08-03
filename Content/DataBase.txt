@@ -1,0 +1,9 @@
+create table Users(UID int IDENTITY(1,1), UNcode nvarchar(50) primary key , Fname nvarchar(max) , Lname nvarchar(max), Email nvarchar(max) , Mobile nvarchar(20) , IsValid bit, Token nvarchar(max));
+create table Doctors(DID int IDENTITY(1,1),MCC nvarchar(50) primary key , FULLname nvarchar(max), expert nvarchar(max) , Proprietary nvarchar(max), Floship nvarchar(max), Email nvarchar(max) , DSex nvarchar(max), Mobile nvarchar(20), Workcity nvarchar(max), Workname nvarchar(max), Workphone nvarchar(20), Workaddress nvarchar(max));
+create table Accounts(AID int IDENTITY(1,1),Username nvarchar(100) primary key, Password nvarchar(max), Type nvarchar(max) , NCode nvarchar(50));
+create table News(NID int primary key IDENTITY(1,1), Title nvarchar(max) , Image nvarchar(max) , Summary nvarchar(max) , Category nvarchar(max) , Text nvarchar(max));
+create table Post(PID int primary key IDENTITY(1,1), Title nvarchar(max) , Image nvarchar(max) , Summary nvarchar(max) , Category nvarchar(max) , Text nvarchar(max));
+create table Contact( CID int primary Key IDENTITY(1,1), Cname nvarchar(max) , Cemail nvarchar(max) , Ctext nvarchar(max)); 
+create table Visit(VID int primary key IDENTITY(1,1), MCC nvarchar(max), UNcode nvarchar(50), Cate nvarchar(max), Qtitle nvarchar(max), Qtext nvarchar(max), Sex nvarchar(10), Vage int, Vheight int, Vweight int, Qother nvarchar(max), Qspecial nvarchar(max), Qdrug nvarchar(max), Qamal nvarchar(max), Qfamily nvarchar(max), Qothercase nvarchar(max), Supphone nvarchar(20), Supmail nvarchar(max));
+create table Response(RID int primary key IDENTITY(1,1), VID int , MCC nvarchar(50) , Rtext nvarchar(max));
+create table Newletter(NID int primary key IDENTITY(1,1), Nemail nvarchar(max));

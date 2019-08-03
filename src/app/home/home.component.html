@@ -2,7 +2,7 @@
 <div class="back">
   <section>
       <p>کلینیک خاص</p>
-      <h2>The Special Clinic </h2>
+      <h2><strong>Special Clinic</strong></h2>
       <p>  <i class="fa fa-telegram"  aria-hidden="true"></i>
         <i class="fa fa-instagram" aria-hidden="true"></i>
         <i class="fa fa-twitter" aria-hidden="true"></i>
@@ -105,11 +105,13 @@
     <div class="newletter" dir="rtl" >
       <div class="container" >
           <div class="col-lg-6 mx-auto">
-          <mat-form-field >
-              <input  matInput #Email="ngModel" ngModel placeholder="پست الکترونیکی"  required>
-              <mat-icon matSuffix> <i class="fa fa-paper-plane" aria-hidden="true"></i></mat-icon>
-              <mat-error *ngIf="Email.invalid">ایمیل نامعتبر است</mat-error>
-            </mat-form-field>
+            <form #Newletter="ngForm">
+              <mat-form-field >
+                <input  type="email" matInput #Nemail="ngModel" name="Nemail" ngModel placeholder="پست الکترونیکی"  required>
+                <mat-icon (click)="postNewletter(Newletter)" style="cursor: pointer" matSuffix> <i class="fa fa-paper-plane" aria-hidden="true"></i></mat-icon>
+                <mat-error *ngIf="Nemail.invalid">ایمیل نامعتبر است</mat-error>
+              </mat-form-field>
+            </form>
           </div>
       </div>
      </div>
