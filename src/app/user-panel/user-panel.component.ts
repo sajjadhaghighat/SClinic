@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { UsersService } from '../Services/users.service';
+import { VisitService } from '../Services/visit.service';
 
 export interface Tile {
   color: string;
@@ -17,15 +18,16 @@ export interface Tile {
 })
 export class UserPanelComponent implements OnInit {
 
-  constructor(public cookie:CookieService,private uservice :UsersService) { }
+  constructor(public cookie:CookieService,private uservice :UsersService,private vservice : VisitService) { }
 
   ngOnInit() {
     this.uservice.getUser();
+    this.vservice.getVisitList();
   }
   tiles: Tile[] = [
-    {text: 'پروفایل', cols: 2, rows: 1, color: '#663399' , link : 'user-profile'},
-    {text: 'مدیریت سوالات', cols: 2, rows: 1, color: '#008080' , link : ''},
-    {text: 'حذف حساب', cols: 4, rows: 1, color: '#1E90FF', link : ''}
+    {text: 'پروفایل', cols: 2, rows: 1, color: '' , link : 'user-profile'},
+    {text: 'مدیریت سوالات', cols: 2, rows: 1, color: '' , link : 'user-questions'},
+    {text: 'حذف حساب', cols: 4, rows: 1, color: 'red', link : ''}
     
   ];
 

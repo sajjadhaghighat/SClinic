@@ -17,6 +17,9 @@ import { AdminGuardService } from './Guards/admin-guard.service';
 import { DoctorPanelComponent } from './doctor-panel/doctor-panel.component';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { UserProfileComponent } from './user-panel/user-profile/user-profile.component';
+import { DoctorProfileComponent } from './doctor-panel/doctor-profile/doctor-profile.component';
+import { UserQuestionsComponent } from './user-panel/user-questions/user-questions.component';
+import { QuestionListComponent } from './doctor-panel/question-list/question-list.component';
 
 const routes: Routes = [
 {
@@ -35,14 +38,21 @@ const routes: Routes = [
   path: 'doctor-register' , component: DoctorRegisterComponent  
 },
 {
-  path: 'doctor-panel' , component: DoctorPanelComponent  , canActivate: [UserGuardService]
+  path: 'doctor-panel' ,
+  component: DoctorPanelComponent  ,
+  canActivate: [UserGuardService] ,
+  children : [
+    {path : 'doctor-profile' , component : DoctorProfileComponent},
+    {path : 'question-list' , component : QuestionListComponent}
+  ]
 },
 {
   path: 'user-panel' ,
   component: UserPanelComponent  ,
   canActivate: [UserGuardService] ,
   children : [
-    {path : 'user-profile' , component : UserProfileComponent}
+    {path : 'user-profile' , component : UserProfileComponent},
+    {path : 'user-questions' , component : UserQuestionsComponent}
   ]
 },
 {

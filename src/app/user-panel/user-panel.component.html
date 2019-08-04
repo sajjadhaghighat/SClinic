@@ -7,7 +7,8 @@
     <a  *ngFor="let tile of tiles" [routerLink]="[tile.link]"  >
       <mat-grid-tile
         [colspan]="tile.cols"
-        [rowspan]="tile.rows">
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
         {{tile.text}}
       </mat-grid-tile>
     </a>

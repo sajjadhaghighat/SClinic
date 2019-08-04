@@ -1,5 +1,5 @@
 export class IVisit {
-        
+    VID : number;    
     MCC : string;
     UNcode : string;
     Cate : string;

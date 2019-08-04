@@ -1,0 +1,85 @@
+<div class="header">
+  <h1>سوالات شما</h1>
+</div>
+<div class="container">
+<div *ngFor="let x of userVisits; let i = index">
+
+<div class="row" dir="rtl">
+    <div class="col-md-2 divimg">
+        <h1 >{{i+1}}</h1>
+      <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+    </div>
+    <div class="" class="col-md-10 divtext">
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+            <p>حوزه سوال شما</p>
+            <h6>{{x.Cate}}</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سن</p>
+          <h6>{{x.Vage}}</h6>
+        </div>
+        <div class="col-md-4">
+          <p>قد</p>
+          <h6>{{x.Vheight}} سانتی متر</h6>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+          <p>وزن</p>
+          <h6>{{x.Vweight}} کیلوگرم</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سابقه بیماری های دیگر</p>
+          <h6>{{x.Qother}}</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سابقه بیماری های خاص</p>
+          <h6>{{x.Qspecial}}</h6>
+        </div>
+        
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+          <p>سابقه مصرف دارو</p>
+          <h6>{{x.Qdrug}}</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سابقه عمل های جراحی</p>
+          <h6>{{x.Qamal}}</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سابقه بیماری در خانواده یا فامیل</p>
+          <h6>{{x.Qfamily}}</h6>
+        </div>
+        
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+          <p>سایر موارد</p>
+          <h6>{{x.Qothercase}}</h6>
+        </div>
+        
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+          <p>عنوان سوال</p>
+          <h6>{{x.Qtitle}}</h6>
+        </div>
+        <div class="col-md-8">
+          <p>متن سوال</p>
+          <h6>{{x.Qtext}}</h6>
+        </div>
+        
+      </div>
+        
+    </div>
+      
+  </div>
+
+<div Class="titlediv2-v2">
+</div>
+</div>
+
+</div>
+<br><br>

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { IDoctors } from '../Models/doctors.model';
 import { IAccounts } from '../Models/accounts.model';
 import { HttpClient } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ export class DoctorsService {
   doctorList : IDoctors[];
   daList : IAccounts[];
   URL : string = 'http://localhost:53358/api/';
-  constructor(private http : HttpClient) { }
+
+  constructor(private http : HttpClient,private cookie:CookieService) { }
 
   postDoctor(emp : IDoctors){
     console.log(emp);
@@ -29,7 +31,11 @@ export class DoctorsService {
 
   }
   
-
+  getDoctor(){
+    this.http.get(this.URL + 'Doctors/' + this.cookie.get('code'))
+    .toPromise().then(res => this.selectedDoctor = res as IDoctors);
+    
+  }
 
   getDoctorList(){
     this.http.get(this.URL + 'Doctors')

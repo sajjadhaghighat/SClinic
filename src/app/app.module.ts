@@ -36,6 +36,9 @@ import { ContactService } from './Services/contact.service';
 import { UserPanelComponent } from './user-panel/user-panel.component';
 import { DoctorPanelComponent } from './doctor-panel/doctor-panel.component';
 import { UserProfileComponent } from './user-panel/user-profile/user-profile.component';
+import { DoctorProfileComponent } from './doctor-panel/doctor-profile/doctor-profile.component';
+import { UserQuestionsComponent } from './user-panel/user-questions/user-questions.component';
+import { QuestionListComponent } from './doctor-panel/question-list/question-list.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,10 @@ import { UserProfileComponent } from './user-panel/user-profile/user-profile.com
     DoctorsListComponent,
     UserPanelComponent,
     DoctorPanelComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    DoctorProfileComponent,
+    UserQuestionsComponent,
+    QuestionListComponent
   ],
   imports: [
     BrowserModule,

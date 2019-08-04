@@ -8,7 +8,8 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class VisitService {
 
-  doctorList : IVisit[];
+  userVisit : IVisit;
+  visitList : IVisit[];
   URL : string = 'http://localhost:53358/api/';
 
   constructor(private http : HttpClient,private cookie : CookieService) { }
@@ -27,7 +28,7 @@ export class VisitService {
 
   getVisitList(){
     this.http.get(this.URL + 'Visits')
-    .toPromise().then(res => this.doctorList = res as IVisit[]);
+    .toPromise().then(res => this.visitList = res as IVisit[]);
     
   }
  
