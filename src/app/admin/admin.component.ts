@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../Services/post.service';
 
 export interface Tile {
   color: string;
   cols: number;
   rows: number;
   text: string;
+  link: string;
 }
 
 @Component({
@@ -14,16 +16,17 @@ export interface Tile {
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  constructor(private pservice:PostService) { }
 
   ngOnInit() {
+    this.pservice.getPostList();
   }
   tiles: Tile[] = [
-    {text: 'مدیریت پزشکان', cols: 2, rows: 3, color: '#663399'},
-    {text: 'مدیریت پست', cols: 2, rows: 3, color: '#008080'},
-    {text: 'مدیریت درخواست ها', cols: 2, rows: 4, color: '#1E90FF'},
-    {text: 'مدیریت اعضا', cols: 2, rows: 2, color: '#2F4F4F'},
-     {text: 'مدیریت ویزیت', cols: 2, rows: 2, color: '#696969'}
+    {text: 'مدیریت پزشکان', cols: 2, rows: 1, color: '',link:''},
+    {text: 'مدیریت پست', cols: 2, rows: 1, color: '',link:'post-management'},
+    {text: 'مدیریت درخواست ها', cols: 2, rows: 1, color: '',link:''},
+    {text: 'مدیریت اعضا', cols: 2, rows: 1, color: '',link:''},
+     {text: 'مدیریت ویزیت', cols: 4, rows: 1, color: '',link:''}
   ];
 
 }

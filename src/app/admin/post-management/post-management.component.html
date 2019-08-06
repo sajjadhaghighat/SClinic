@@ -1,0 +1,125 @@
+<div class="header">
+    <h1>مدیریت پست</h1>
+</div>
+<div class="container posttab">
+    <mat-tab-group>
+        <mat-tab label="ثبت پست جدید">
+            <div class="logo">
+                <i class="fa fa-file-text-o" aria-hidden="true"></i>
+            </div>
+            <div class="divForm" dir="rtl">
+                    
+                    <form #NewPostForm="ngForm" (ngSubmit)="onSubmit(NewPostForm)">
+                            <br>
+                            <div class="form-row">
+                               
+                                <div class="form-group col-md-6">
+                                    <mat-form-field class="full-width">
+                                        <input type="text" #Image="ngModel" name="Image" ngModel matInput  placeholder="عکس مطلب" required>
+                                        <mat-error *ngIf="Image.invalid">آدرس عکس مطلب را وارد کنید</mat-error>
+                                        
+                                    </mat-form-field>
+                                    
+                                </div>
+                                <div class="form-group col-md-6">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>دسته بندی مطلب</mat-label>
+                                                <mat-select #Category="ngModel" name="Category" ngModel required>
+                                                  
+                                                    <mat-option value="دهان">دهان</mat-option>
+                                                    <mat-option value="دندان">دندان</mat-option>
+                                                    <mat-option value="لثه">لثه</mat-option>
+                                                    <mat-option value="عفونی">عفونی</mat-option>
+                                                    <mat-option value="چشم">چشم</mat-option>
+                                                    <mat-option value="بینی،حلق،گوش">بینی،حلق،گوش</mat-option>
+                                                    <mat-option value="مغز و اعصاب">مغز و اعصاب</mat-option>
+                                                    <mat-option value="مفاصل و ستون فقرات">مفاصل و ستون فقرات</mat-option>
+                                                    <mat-option value="رژیم غذایی">رژیم غذایی</mat-option>
+                                                    <mat-option value="قلب">قلب</mat-option>
+                                                    <mat-option value="کلیه و مجاری ادرار">کلیه و مجاری ادرار</mat-option>
+                                                    <mat-option value="دستگاه تنفسی">دستگاه تنفسی</mat-option>
+                                                    <mat-option value="دستگاه گوارش">دستگاه گوارش</mat-option>
+                                                    <mat-option value="پوست و مو">پوست و مو</mat-option>
+                                                    <mat-option value="زنان و زایمان">زنان و زایمان</mat-option>
+                                                    <mat-option value="غدد">غدد</mat-option>
+                                                    <mat-option value="دستگاه تولید مثل">دستگاه تولید مثل</mat-option>
+                                                    <mat-option value="روانشناسی">روانشناسی</mat-option>
+                                                                                                   
+                                                </mat-select>
+                                                <mat-error *ngIf="Category.invalid">نوع دسته بندی را انتخاب کنید</mat-error>
+                                              </mat-form-field>
+                                </div>
+                                
+                            </div>
+                            <br>
+                            <div class="form-row">
+                                
+                                <mat-form-field class="full-width">
+                                    <input type="text" #Title="ngModel" name="Title" ngModel matInput  placeholder="عنوان مطلب" required>
+                                    <mat-error *ngIf="Title.invalid">عنوان مطلب را وارد کنید</mat-error>
+                                </mat-form-field>
+                                                        
+                            </div>
+                            <br>
+                            <div class="form-row">
+                                
+                                    <mat-form-field class="full-width">
+                                        <input type="text" #Summary="ngModel" name="Summary" ngModel matInput  placeholder="خلاصه مطلب" required>
+                                        <mat-error *ngIf="Summary.invalid">خلاصه مطلب را بنویسید </mat-error>
+                                    </mat-form-field>
+                                                            
+                            </div>
+                            <br>
+                            <div class="form-row">
+                                
+                                    <mat-form-field class="full-width">
+                                        <textarea type="text" #Text="ngModel" name="Text" ngModel matInput  placeholder="متن اصلی مطلب" required></textarea>
+                                        <mat-error *ngIf="Text.invalid">متن اصلی مطلب را بنویسید </mat-error>
+                                    </mat-form-field>
+                                                            
+                            </div>
+                            <br>
+                            <br>
+                            <div class="form-row" style="margin-top:50px;">
+                                    <div class="form-group col-md-3"></div>
+                                    <div class="form-group col-md-3">
+                                            <button  type="submit" [disabled]="!NewPostForm.valid" class="btn btn-lg btn-block btn-info"  [title]="!NewPostForm.valid ? 'فرم را به طور کامل پر کنید' : ''">ثبت پست جدید <i class="fa fa-floppy-o"></i></button>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                            <button type="button"class="btn btn-lg btn-block btn-secondary" (click)="resetForm(NewPostForm)">تکرار <i class="fa fa-repeat"></i></button>
+                                    </div>
+                                    <div class="form-group col-md-3"></div>
+                            </div>
+                        </form>
+            </div>
+        </mat-tab>
+        <mat-tab label="مشاهده پست ها">
+                <div class="container">
+                        <div *ngFor="let x of pservice.postList">
+                            <div class="row postshow" dir="rtl"  >
+                            <div class="divimg">
+                                <img class="zoom" [src]="x.Image" alt="">
+                            </div>
+                            <div class="divtext">
+                                <section>
+                                    <h5>{{x.Title}}</h5>
+                                    <br>
+                                    <p>{{x.Summary}}</p>
+                                    <div dir="ltr">
+                                        <a [routerLink]="['../../post', x.PID]"><button mat-raised-button color="primary">مشاهده کامل پست</button></a> | 
+                                        <a [routerLink]="['']"><button mat-raised-button color="accent">ویرایش</button></a> |
+                                        <button mat-raised-button color="warn">حذف</button>
+                                    </div>
+                                    
+                                </section>
+                            </div>
+                        </div>
+                        <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+                                     'titlediv2-v2': styleservice.Flag == false}">
+                        </div>
+                        </div>
+                    </div>
+        </mat-tab>
+       
+      </mat-tab-group>
+</div>

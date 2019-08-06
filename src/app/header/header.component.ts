@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { StyleService } from '../Services/style.service';
 import { ToastrService } from 'ngx-toastr';
 import { CookieService } from 'ngx-cookie-service';
+import { PostService } from '../Services/post.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +11,15 @@ import { CookieService } from 'ngx-cookie-service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public styleservice:StyleService,private toastr:ToastrService,public cookie:CookieService) { }
+  constructor(
+    public styleservice:StyleService,
+    private toastr:ToastrService,
+    public cookie:CookieService,
+    private pservice : PostService
+    ) { }
 
   ngOnInit() {
-  
+    this.pservice.getPostList();
   }
   signOut(){
     this.toastr.success('با موفقیت خارج شدید',this.cookie.get('name'));

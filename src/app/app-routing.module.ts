@@ -20,6 +20,9 @@ import { UserProfileComponent } from './user-panel/user-profile/user-profile.com
 import { DoctorProfileComponent } from './doctor-panel/doctor-profile/doctor-profile.component';
 import { UserQuestionsComponent } from './user-panel/user-questions/user-questions.component';
 import { QuestionListComponent } from './doctor-panel/question-list/question-list.component';
+import { PostManagementComponent } from './admin/post-management/post-management.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostComponent } from './posts/post/post.component';
 
 const routes: Routes = [
 {
@@ -68,10 +71,21 @@ const routes: Routes = [
   path: 'contact-us', component: ContactUsComponent
 },
 {
+  path: 'posts', component: PostsComponent
+},
+{
+  path: 'post/:id', component: PostComponent
+},
+{
   path:'news' , component: NewsComponent
 },
 {
-  path:'admin' , component: AdminComponent , canActivate: [AdminGuardService]
+  path:'admin' ,
+  component: AdminComponent , 
+  canActivate: [AdminGuardService],
+  children : [
+    {path : 'post-management' , component : PostManagementComponent}
+  ]
 },
 {
   path:'**' , component: NotAccessComponent

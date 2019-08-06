@@ -76,7 +76,25 @@
     </div>
       
   </div>
+  <div *ngFor="let y of rservice.responseList">
+    <div *ngIf="y.VID==x.VID">
+        <div class="row resborder" >
+            <div class="col-md-4 dname" >
+              <div *ngFor="let m of dservice.doctorList">
+                  <div *ngIf="m.MCC==y.MCC">
+                    
+                        <strong>دکتر {{m.FULLname}}</strong>
+                  </div>
+              </div>
+              </div>
+          
+              <div class="col-md-8 resstyle" *ngIf="y.VID==x.VID">
+                  {{y.Rtext}}
+              </div>
+          </div>
 
+    </div>
+  </div>
 <div Class="titlediv2-v2">
 </div>
 </div>

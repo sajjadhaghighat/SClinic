@@ -74,16 +74,49 @@
             <p>متن سوال</p>
             <h6>{{x.Qtext}}</h6>
           </div>
-          
         </div>
-          
       </div>
-        
     </div>
+
+    <div *ngFor="let y of rservice.responseList">
+        <div *ngIf="y.VID==x.VID">
+            <div class="row resborder" >
+                <div class="col-md-4 dname" >
+                  <div *ngFor="let m of dservice.doctorList">
+                      <div *ngIf="m.MCC==y.MCC">
+                        
+                            <strong>دکتر {{m.FULLname}}</strong>
+                      </div>
+                  </div>
+                  </div>
+              
+                  <div class="col-md-8 resstyle" *ngIf="y.VID==x.VID">
+                      {{y.Rtext}}
+                  </div>
+              </div>
+    
+        </div>
+      </div>
+
+    <form #ResponseForm="ngForm" (ngSubmit)="postResponse(ResponseForm)">
+        <div class="row" dir="rtl">
+            <input type="hidden" #VID="ngModel" ngModel name="VID" [ngModel]="x.VID">
+            <input type="hidden" #MCC="ngModel" ngModel name="MCC" [ngModel]="cookie.get('code')">
+            <div class="col-md-9">
+                <mat-form-field class="full-width">
+                        <textarea type="text" #Rtext="ngModel" name="Rtext" ngModel matInput  placeholder="پاسخ سوال را اینجا بنویسید" required></textarea>
+                        <mat-error *ngIf="Rtext.invalid">نوشتن پاسخ سوال ضروری است</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-3">
+                <button type="submit" mat-raised-button class="full-width submm" color="primary" >ارسال پاسخ</button>
+            </div>
+          </div>
+    </form>
+    
+    <div Class="titlediv2-v2"></div>
+  </div>
   
-  <div Class="titlediv2-v2">
-  </div>
-  </div>
-  
-  </div>
+</div>
   <br><br>
+<!--------------------------------------------------------------------->  

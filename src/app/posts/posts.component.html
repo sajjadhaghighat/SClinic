@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="header">
+        <h1>مطالب آموزشی</h1>
+</div>
+<div class="container">
+    <div *ngFor="let x of pservice.postList">
+        <div class="row postshow" dir="rtl"  >
+        <div class="divimg">
+            <img class="zoom" [src]="x.Image" alt="">
+        </div>
+        <div class="divtext">
+            <section>
+                <h5>{{x.Title}}</h5>
+                <br>
+                <p>{{x.Summary}}</p>
+                <div dir="ltr">
+                    <a [routerLink]="['../post', x.PID]"><button mat-raised-button color="primary">ادامه مطلب</button></a>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+                 'titlediv2-v2': styleservice.Flag == false}">
+    </div>
+    </div>
+</div>
+<app-footer></app-footer>

@@ -3,6 +3,7 @@ import { StyleService } from '../Services/style.service';
 import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
+import { PostService } from '../Services/post.service';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public styleservice : StyleService,private toastr : ToastrService,private http:HttpClient) { }
+  constructor(public styleservice : StyleService,private toastr : ToastrService,private http:HttpClient,public pservice:PostService) { }
   ngOnInit() {
   }
   postNewletter(form : NgForm)

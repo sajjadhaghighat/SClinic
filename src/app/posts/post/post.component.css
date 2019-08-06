@@ -1,0 +1,36 @@
+.header{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(8, 8, 105);
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color : white;
+    font-family: 'IRANSans';
+
+} 
+.divForm{
+    padding-top: 150px 10px 150px 10px;
+    background-image: linear-gradient(to bottom, white,white,rgb(156, 200, 221));
+}
+.row{
+  opacity: 1;
+  animation: showw 2s;
+}
+@keyframes showw{
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+.row img{
+    padding-top: 30px; 
+    width: 100%;
+    border-radius: 20px;
+    height: auto;
+    text-align: center;
+}
+.divtext{
+    padding-top: 50px;
+    direction: rtl;
+    text-align: justify;
+    font-family: 'IRANSans';
+}

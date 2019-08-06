@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatSelectModule,MatFormFieldModule,MatInputModule,MatButtonModule, MatIconModule, MatGridListModule, MatCardModule, MatMenuModule,MatRadioModule } from '@angular/material'
+import { MatSelectModule,MatFormFieldModule,MatInputModule,MatButtonModule, MatIconModule, MatGridListModule, MatCardModule, MatMenuModule,MatRadioModule,MatTabsModule } from '@angular/material'
 import { ToastrModule  } from 'ngx-toastr';
 
 
@@ -39,6 +39,9 @@ import { UserProfileComponent } from './user-panel/user-profile/user-profile.com
 import { DoctorProfileComponent } from './doctor-panel/doctor-profile/doctor-profile.component';
 import { UserQuestionsComponent } from './user-panel/user-questions/user-questions.component';
 import { QuestionListComponent } from './doctor-panel/question-list/question-list.component';
+import { PostManagementComponent } from './admin/post-management/post-management.component';
+import { PostsComponent } from './posts/posts.component';
+import { PostComponent } from './posts/post/post.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +66,10 @@ import { QuestionListComponent } from './doctor-panel/question-list/question-lis
     UserProfileComponent,
     DoctorProfileComponent,
     UserQuestionsComponent,
-    QuestionListComponent
+    QuestionListComponent,
+    PostManagementComponent,
+    PostsComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
@@ -81,6 +87,7 @@ import { QuestionListComponent } from './doctor-panel/question-list/question-lis
     MatSelectModule,
     ReactiveFormsModule,
     MatRadioModule,
+    MatTabsModule,
     ToastrModule.forRoot(
       {toastClass: 'ngx-toastr toastr',positionClass:'toast-top-left'}
     )

@@ -1,0 +1,28 @@
+<app-header></app-header>.
+<br>
+
+<div class="header">
+    <h3>{{pservice.selectedPost.Title}}</h3>
+</div>
+<div class="container">
+    <div class="divForm">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+              <img [src]="pservice.selectedPost.Image" alt="">
+          </div>
+        </div>
+        <div class="row divtext">
+          <div class="col-lg-10 mx-auto">
+              <section>
+                  <p>{{pservice.selectedPost.Text}}</p>
+                  <br>
+                  <h6 style="color: red;" >دسته بندی : {{pservice.selectedPost.Category}}</h6>
+                  <br>
+                </section>
+          </div>
+        </div>
+    </div>
+</div>
+
+<br>  
+<app-footer></app-footer>

@@ -20,7 +20,7 @@ export class VisitService {
     return this.http.post(this.URL + 'Visits',emp);
 
   }
-  putVisit(id : string ,emp : IVisit){
+  putVisit(id : number ,emp : IVisit){
       return this.http.put(this.URL + 'Visits/' + id , emp);
 
   }
@@ -34,7 +34,7 @@ export class VisitService {
  
   
 
-  deleteVisit(id : string){
+  deleteVisit(id : number){
     return this.http.delete(this.URL + 'Visits/' + id);
   }
   
