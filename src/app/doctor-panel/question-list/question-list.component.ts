@@ -37,7 +37,8 @@ export class QuestionListComponent implements OnInit {
     this.rservice.postResponse(form.value).subscribe(
       data=>{
           this.toastr.success('پاسخ سوال با موفقیت ثبت شد','پیغام');
-          this.router.navigate(['../'], { relativeTo: this.route });
+          this.rservice.getResponseList();
+          form.resetForm();
       },
       error=>{
         this.toastr.error('ارتباط با سرور برقرار نشد','خطا');

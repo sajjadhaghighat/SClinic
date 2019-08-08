@@ -107,8 +107,9 @@
                                     <p>{{x.Summary}}</p>
                                     <div dir="ltr">
                                         <a [routerLink]="['../../post', x.PID]"><button mat-raised-button color="primary">مشاهده کامل پست</button></a> | 
-                                        <a [routerLink]="['']"><button mat-raised-button color="accent">ویرایش</button></a> |
-                                        <button mat-raised-button color="warn">حذف</button>
+                                        <button mat-raised-button color="accent" (click)="setCookie(x.PID)" data-toggle="modal" data-target="#updateModal">ویرایش</button> |
+                                        <button mat-raised-button color="warn" (click)="setCookie(x.PID)" data-toggle="modal" data-target="#myModal">حذف</button>
+                                        
                                     </div>
                                     
                                 </section>
@@ -123,3 +124,111 @@
        
       </mat-tab-group>
 </div>
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="font-family: 'IRANSans';text-align: center;" >
+      
+        <!-- Modal Header -->
+        <div class="modal-header" >
+          <h4 class="modal-title">تایید حذف</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            آیا از حذف کردن پست مطمئن هستید ؟
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer" dir="rtl">
+          <div class="col-md-6">
+                <button type="button" class="btn btn-danger" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal">خیر</button>
+          </div>
+          <div class="col-md-6">
+                <button type="button" class="btn btn-primary" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal" (click)="onDelete()">بله</button>
+          </div>
+                 
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="updateModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="font-family: 'IRANSans';text-align: center;" >
+      
+        <!-- Modal Header -->
+        <div class="modal-header" >
+          <h4 class="modal-title">بروز رسانی</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form #UpdatePostForm="ngForm" dir="rtl">
+                <input type="hidden" #PID1="ngModel" name="PID" ngModel [(ngModel)]="pservice.selectedPost.PID">
+                <input type="hidden" #Category1="ngModel" name="Category" ngModel [(ngModel)]="pservice.selectedPost.Category">
+                <br>
+                <div class="form-row">
+                   
+                    <mat-form-field class="full-width">
+                            <input type="text" #Image1="ngModel" name="Image" ngModel [(ngModel)]="pservice.selectedPost.Image" matInput  placeholder="عکس مطلب" required>
+                            <mat-error *ngIf="Image1.invalid">آدرس عکس مطلب را وارد کنید</mat-error>
+                            
+                    </mat-form-field>
+          
+                </div>
+                <br>
+                <div class="form-row">
+                    
+                  <label>دسته بندی مطلب : {{pservice.selectedPost.Category}}</label>
+                   
+                </div>
+                <br>
+                <div class="form-row">
+                    
+                    <mat-form-field class="full-width">
+                        <input type="text" #Title1="ngModel" name="Title" ngModel [(ngModel)]="pservice.selectedPost.Title" matInput  placeholder="عنوان مطلب" required>
+                        <mat-error *ngIf="Title1.invalid">عنوان مطلب را وارد کنید</mat-error>
+                    </mat-form-field>
+                                            
+                </div>
+                <br>
+                <div class="form-row">
+                    
+                        <mat-form-field class="full-width">
+                            <input type="text" #Summary1="ngModel" name="Summary" ngModel [(ngModel)]="pservice.selectedPost.Summary" matInput  placeholder="خلاصه مطلب" required>
+                            <mat-error *ngIf="Summary1.invalid">خلاصه مطلب را بنویسید </mat-error>
+                        </mat-form-field>
+                                                
+                </div>
+                <br>
+                <div class="form-row">
+                    
+                        <mat-form-field class="full-width">
+                            <textarea type="text" #Text1="ngModel" name="Text" ngModel matInput [(ngModel)]="pservice.selectedPost.Text" placeholder="متن اصلی مطلب" required></textarea>
+                            <mat-error *ngIf="Text1.invalid">متن اصلی مطلب را بنویسید </mat-error>
+                        </mat-form-field>
+                                                
+                </div>
+                <br>
+                <br>
+                
+            </form>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer" dir="rtl">
+          <div class="col-md-6">
+                <button type="button" class="btn btn-danger" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal">بستن</button>
+          </div>
+          <div class="col-md-6">
+                <button type="button" class="btn btn-primary" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal" (click)="onUpdate(UpdatePostForm)">بروزرسانی</button>
+          </div>
+                 
+        </div>
+        
+      </div>
+    </div>
+  </div>

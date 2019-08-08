@@ -34,6 +34,9 @@ export class PostService {
     this.http.get(this.URL + 'Posts')
     .toPromise().then(res => this.postList = res as IPost[]);
     
+    setTimeout(() => {
+      this.postList.reverse();
+    }, 100);
   }
  
   deletePost(id : number){

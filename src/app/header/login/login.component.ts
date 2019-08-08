@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
         this.cookie.set('name',fu.Fname+" "+fu.Lname);
         this.cookie.set('role',a.Type);
         this.cookie.set('code',fu.UNcode);
+        this.cookie.set('username',a.Username);
         this.toastr.success('با موفقیت وارد شدید',this.cookie.get('name'));
         this.route.navigate(['/']);
       }
@@ -52,25 +53,30 @@ export class LoginComponent implements OnInit {
       }
      
      }
-     if(a.Type == 'doctor')
+     else if(a.Type == 'doctor')
      {
       let fu = doctors.find(x => x.MCC ==  a.NCode);
         this.dService.selectedDoctor = fu;
         this.cookie.set('name',fu.FULLname);
         this.cookie.set('role',a.Type);
         this.cookie.set('code',fu.MCC);
+        this.cookie.set('username',a.Username);
         this.toastr.success('با موفقیت وارد شدید',this.cookie.get('name'));
         this.route.navigate(['/']);
       
      }
-     if(a.Type == 'admin'){
+     else if(a.Type == 'admin'){
       this.cookie.set('name','ادمین');
       this.cookie.set('role',a.Type);
       this.toastr.success('با موفقیت وارد شدید',this.cookie.get('name'));
       this.route.navigate(['/']);
      }
       
-    this.label = 'modal'; 
+     else{
+      this.toastr.error('ارتباط با سرور برقرار نشد','خطا');
+      //this.toastr.show('اطلاعات وارد شده صحیح نیست','ورود');
+    }
+    
       
     }
     else{

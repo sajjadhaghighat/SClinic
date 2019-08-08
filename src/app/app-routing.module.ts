@@ -23,6 +23,7 @@ import { QuestionListComponent } from './doctor-panel/question-list/question-lis
 import { PostManagementComponent } from './admin/post-management/post-management.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
+import { DeleteUserComponent } from './user-panel/delete-user/delete-user.component';
 
 const routes: Routes = [
 {
@@ -55,7 +56,8 @@ const routes: Routes = [
   canActivate: [UserGuardService] ,
   children : [
     {path : 'user-profile' , component : UserProfileComponent},
-    {path : 'user-questions' , component : UserQuestionsComponent}
+    {path : 'user-questions' , component : UserQuestionsComponent},
+    {path : 'delete-user' , component: DeleteUserComponent}
   ]
 },
 {

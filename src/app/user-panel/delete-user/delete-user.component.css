@@ -1,0 +1,30 @@
+.header{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(8, 8, 105);
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color : white;
+    font-family: 'IRANSans';
+
+} 
+.divForm{
+    direction: rtl;
+    margin-top:20px;
+     margin-bottom: 150px;
+     padding-left: 75px;
+     padding-right: 75px;
+     padding-bottom: 50px;
+     padding-top:20px;
+     border-radius: 10px;
+     background-image : linear-gradient(to bottom, #9fb8ad 35%, #1fc8db 51%, #2cb5e8 75%);
+     font-family: 'IRANSans';
+     font-size: 14px;
+  }
+ button{
+    transition: 0.7s background-color,0.7 color;
+ } 
+ button:hover{
+     background-color: yellow;
+     color: black;
+ }

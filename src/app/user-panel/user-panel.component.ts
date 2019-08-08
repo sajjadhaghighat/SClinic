@@ -35,7 +35,7 @@ export class UserPanelComponent implements OnInit {
   tiles: Tile[] = [
     {text: 'پروفایل', cols: 2, rows: 1, color: '' , link : 'user-profile'},
     {text: 'مدیریت سوالات', cols: 2, rows: 1, color: '' , link : 'user-questions'},
-    {text: 'حذف حساب', cols: 4, rows: 1, color: 'red', link : ''}
+    {text: 'حذف حساب', cols: 4, rows: 1, color: 'red', link : 'delete-user'}
     
   ];
 

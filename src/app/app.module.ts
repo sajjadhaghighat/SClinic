@@ -42,6 +42,7 @@ import { QuestionListComponent } from './doctor-panel/question-list/question-lis
 import { PostManagementComponent } from './admin/post-management/post-management.component';
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
+import { DeleteUserComponent } from './user-panel/delete-user/delete-user.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { PostComponent } from './posts/post/post.component';
     QuestionListComponent,
     PostManagementComponent,
     PostsComponent,
-    PostComponent
+    PostComponent,
+    DeleteUserComponent
   ],
   imports: [
     BrowserModule,
