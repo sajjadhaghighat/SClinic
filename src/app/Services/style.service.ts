@@ -5,7 +5,7 @@ import { ToastrService } from 'ngx-toastr';
   providedIn: 'root'
 })
 export class StyleService {
-  Flag : Boolean = true;
+  Flag : Boolean = false;
   constructor(private toastr:ToastrService) { }
   styleChange()
   {

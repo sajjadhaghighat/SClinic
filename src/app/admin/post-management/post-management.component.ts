@@ -31,6 +31,12 @@ export class PostManagementComponent implements OnInit {
       PID: null
     }
   }
+  resetForm(form?: NgForm){
+    if(form != null)
+    {
+      form.reset();
+    }
+  }
   onSubmit(form : NgForm)
   {
     console.log(form.value);

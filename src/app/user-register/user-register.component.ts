@@ -6,6 +6,7 @@ import { IUsers } from 'src/app/Models/users.model';
 import { IAccounts } from 'src/app/Models/accounts.model';
 import { Router } from '@angular/router';
 import { NULL_EXPR } from '@angular/compiler/src/output/output_ast';
+import { DoctorsService } from '../Services/doctors.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class UserRegisterComponent implements OnInit {
 
 
 
-  constructor(public userService : UsersService, private toastr : ToastrService,private router:Router) { }
+  constructor(public userService : UsersService, private toastr : ToastrService,private router:Router,private dservice:DoctorsService) { }
   emailPattern = "[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})";
   ngOnInit() {
     this.resetForm();
@@ -56,7 +57,9 @@ export class UserRegisterComponent implements OnInit {
   onSubmit(form: NgForm){
     this.userService.postUser(form.value).subscribe(
       data => {
-        
+        this.userService.getUserList();
+        this.userService.getAccountsList();
+        this.dservice.getDoctorList();
         this.toastr.success('ثبت نام شما با موفقیت انجام شد', 'ثبت نام');
         this.router.navigate(['/']);
         let role : IAccounts = {

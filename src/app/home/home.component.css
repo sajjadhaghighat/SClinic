@@ -27,10 +27,10 @@
   
 }
 @keyframes ravan{
-  0%   {color: black;}
-  25%  {color: yellow;}
-  50%  {color: blue;}
-  100% {color: green;}
+  0%   {color: black;content: 'کلینیک خاص';}
+  25%  {color: yellow;content: 'ارائه سرویس مشاوره پزشکی رایگان برای بیماران';}
+  50%  {color: blue;content: 'ارائه مطالب آموزشی جدید و معتبر';}
+  100% {color: green;content: 'کلینیک خاص ضامن سلامتی شما';}
 }
 .back::after{
 
@@ -110,7 +110,7 @@
     direction: rtl;
     min-height: 350px;
     padding: 10px;
-    font-family: "IRANSans";
+    font-family: 'IRANSans';
     text-align: center;
     color: whitesmoke;
     margin-right: 1px;

@@ -1,0 +1,70 @@
+<div class="header">
+  <h1>مدیریت پیغام ها</h1>
+</div>
+<div class="container">
+<div *ngFor="let x of cservice.contactList">
+<div class="row" dir="rtl">
+    <div class="col-md-2 divimg">
+        <i class="fa fa-phone-square" aria-hidden="true"></i>
+    </div>
+    <div class="" class="col-md-10 divtext">
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-6">
+            <h4>{{x.Cname}}</h4>
+        </div>
+        <div class="col-md-6">
+            <h6>ایمیل : {{x.Cemail}}</h6>
+        </div>
+        
+      </div>
+      <div class="row" style="margin-top:20px;text-align: justify;">
+        <div class="col-md-10">
+            <p>متن پیام : {{x.Ctext}}</p>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<div dir="ltr">
+  
+  <button mat-raised-button color="warn"  data-toggle="modal" (click)="getdata(x.CID)" data-target="#CDModal">حذف</button>
+  
+</div>
+<br>
+<div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+             'titlediv2-v2': styleservice.Flag == false}">
+</div>
+</div>
+
+</div>
+<br>
+
+<div class="modal fade" id="CDModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="font-family: 'IRANSans';text-align: center;" >
+      
+        <!-- Modal Header -->
+        <div class="modal-header" >
+          <h4 class="modal-title">تایید حذف</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            آیا از حذف کردن پیغام مطمئن هستید ؟
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer" dir="rtl">
+          <div class="col-md-6">
+                <button type="button" class="btn btn-danger" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal">خیر</button>
+          </div>
+          <div class="col-md-6">
+                <button type="button" class="btn btn-primary" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal" (click)="onDelete()">بله</button>
+          </div>
+                 
+        </div>
+        
+      </div>
+    </div>
+  </div>

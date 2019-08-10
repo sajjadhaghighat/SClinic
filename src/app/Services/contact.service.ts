@@ -29,7 +29,7 @@ export class ContactService {
     
   }
  
-  deleteContact(id : string){
+  deleteContact(id : number){
     return this.http.delete(this.URL + 'Contacts/' + id);
   }
   

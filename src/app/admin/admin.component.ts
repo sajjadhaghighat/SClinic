@@ -22,11 +22,11 @@ export class AdminComponent implements OnInit {
     this.pservice.getPostList();
   }
   tiles: Tile[] = [
-    {text: 'مدیریت پزشکان', cols: 2, rows: 1, color: '',link:''},
-    {text: 'مدیریت پست', cols: 2, rows: 1, color: '',link:'post-management'},
-    {text: 'مدیریت درخواست ها', cols: 2, rows: 1, color: '',link:''},
-    {text: 'مدیریت اعضا', cols: 2, rows: 1, color: '',link:''},
-     {text: 'مدیریت ویزیت', cols: 4, rows: 1, color: '',link:''}
+    {text: 'مدیریت پزشکان', cols: 2, rows: 2, color: '',link:'doctor-management'},
+    {text: 'مدیریت پست', cols: 2, rows: 2, color: '',link:'post-management'},
+    {text: 'مدیریت پیغام ها', cols: 2, rows: 2, color: '',link:'contact-management'},
+    {text: 'مدیریت اعضا', cols: 2, rows: 2, color: '',link:'user-management'},
+    {text: 'مدیریت ویزیت', cols: 4, rows: 1, color: '',link:'visit-management'}
   ];
 
 }

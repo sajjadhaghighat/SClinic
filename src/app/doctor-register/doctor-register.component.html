@@ -215,7 +215,7 @@
                         <button  type="submit" [disabled]="!DRegisterForm.valid || !DUsernameflag" class="btn btn-lg btn-block btn-info"  [title]="(!DRegisterForm.valid || !DUsernameflag) ? 'فرم را به طور کامل پر کنید' : ''">ثبت اطلاعات <i class="fa fa-floppy-o"></i></button>
                 </div>
                 <div class="form-group col-md-3">
-                        <button type="button"class="btn btn-lg btn-block btn-secondary" >تکرار <i class="fa fa-repeat"></i></button>
+                        <button type="button"class="btn btn-lg btn-block btn-secondary" (click)="resetForm(DRegisterForm)">تکرار <i class="fa fa-repeat"></i></button>
                 </div>
                 <div class="form-group col-md-3"></div>
         </div>
@@ -224,7 +224,7 @@
 <div class="nokat">
     <ul>
             <li>
-            پس از مرحله پرداخت، عضویت شما فعال می‌شود و شما به طور ویژه در لیست مطب های شهر خود به مردم و میلیون ها نفر معرفی می‌شوید
+            پس از مرحله ثبت، عضویت شما فعال می‌شود و شما به طور ویژه در لیست مطب های شهر خود به مردم و میلیون ها نفر معرفی می‌شوید
             </li>
             
             <li>

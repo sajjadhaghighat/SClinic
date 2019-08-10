@@ -43,6 +43,11 @@ import { PostManagementComponent } from './admin/post-management/post-management
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { DeleteUserComponent } from './user-panel/delete-user/delete-user.component';
+import { DeleteDoctorComponent } from './doctor-panel/delete-doctor/delete-doctor.component';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { DoctorManagementComponent } from './admin/doctor-management/doctor-management.component';
+import { ContactManagementComponent } from './admin/contact-management/contact-management.component';
+import { VisitManagementComponent } from './admin/visit-management/visit-management.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +76,12 @@ import { DeleteUserComponent } from './user-panel/delete-user/delete-user.compon
     PostManagementComponent,
     PostsComponent,
     PostComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    DeleteDoctorComponent,
+    UserManagementComponent,
+    DoctorManagementComponent,
+    ContactManagementComponent,
+    VisitManagementComponent
   ],
   imports: [
     BrowserModule,

@@ -29,9 +29,9 @@ export class DoctorPanelComponent implements OnInit {
 
   }
   tiles: Tile[] = [
-    {text: 'پروفایل', cols: 2, rows: 1, color: '',link:'doctor-profile'},
-    {text: 'سوالات حوزه تخصص شما', cols: 2, rows: 1, color: '',link:'question-list'},
-    {text: 'حذف حساب', cols: 4, rows: 1, color: 'red',link:''}
+    {text: 'پروفایل', cols: 2, rows: 3, color: '',link:'doctor-profile'},
+    {text: 'سوالات حوزه تخصص شما', cols: 2, rows: 4, color: '',link:'question-list'},
+    {text: 'حذف حساب', cols: 2, rows: 1, color: 'red',link:'delete-doctor'}
         
   ];
 

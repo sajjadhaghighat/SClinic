@@ -1,7 +1,7 @@
 <app-header></app-header>
 <div class="back">
   <section>
-      <p>کلینیک خاص</p>
+      <p >{{mytext}}</p>
       <h2><strong>Special Clinic</strong></h2>
       <p>  <i class="fa fa-telegram"  aria-hidden="true"></i>
         <i class="fa fa-instagram" aria-hidden="true"></i>
@@ -33,32 +33,33 @@
 <div [ngStyle]="{'height.px':200,'background-image': styleservice.Flag ?  'linear-gradient(to bottom,white,rgb(0, 93, 103))' : 'linear-gradient(to bottom,white,#3f51b5)'}"></div>
 <div [ngClass]="{'lastnewsheader' : styleservice.Flag == true,
                 'lastnewsheader-v2': styleservice.Flag == false}">
-    اخبار جدید <i class="fa fa-rss" aria-hidden="true"></i>
+    مشاوره پزشکی
 </div>
 <div [ngStyle]="{'background-color': styleservice.Flag ? 'rgb(0, 93, 103)' : '#3f51b5'}">
     <div class="row lastnewsbody">
-        <div class="col-md-3" >
-            <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/clinicc.jpg" alt=""></div>
-            <div class="lastnewstitle">رژیم غذایی بیماران ام اس</div>
+        <div class="col-md-2" style="font-size: 8em;">
+          <i class="fa fa-user-md" aria-hidden="true"></i>
         </div>
-        <div class="col-md-3" >
-          <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/clinicc.jpg" alt=""></div>
-          <div class="lastnewstitle">رژیم غذایی بیماران ام اس</div>
+        <div class="col-md-2" style="font-size: 8em;">
+          <i class="fa fa-question-circle-o" aria-hidden="true"></i>
         </div>
-        <div class="col-md-3" >
-          <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/clinicc.jpg" alt=""></div>
-          <div class="lastnewstitle">رژیم غذایی بیماران ام اس</div>
+        <div class="col-md-2" style="font-size: 8em;">
+          <i class="fa fa-user-o" aria-hidden="true"></i>
         </div>
-        <div class="col-md-3" >
-            <div class="lastnewsimg"><img class="zoom" style=" border-radius: 10px" src="../../assets/images/clinicc.jpg" alt=""></div>
-            <div class="lastnewstitle">رژیم غذایی بیماران ام اس</div>
+        <div class="col-md-6" style="text-align: right">
+            <section>
+              <h4>مشاوره پزشکی برای بیماران خاص</h4><br>
+              <h5>با استفاده از این سرویس می توانید سوالات مرتبط با بیماری خود را از پزشکان کلینیک خاص بپرسید</h5><br>
+              <h6>برای استفاده از این سرویس باید عضو <strong style="color: yellow">کلینیک خاص</strong> شوید</h6><br>
+            </section>
           </div>
   </div>
 </div>
 <div [ngClass]="{'lastnewsfooter' : styleservice.Flag == true,
                  'lastnewsfooter-v2': styleservice.Flag == false}">
-    <button [ngClass]="{'btn btn-primary' : styleservice.Flag == true,
-                        'btn btn-danger': styleservice.Flag == false}" style="width:50%;height:40px;">بیشتر +</button>
+    <a [routerLink]="['register-tab']" >
+        <button [ngClass]="{'btn btn-primary' : styleservice.Flag == true,
+        'btn btn-danger': styleservice.Flag == false}" style="width:50%;height:40px;">عضویت</button></a>
 </div>
 <div [ngStyle]="{'height.px':200,'background-image': styleservice.Flag ?  'linear-gradient(to top,white,rgb(0, 93, 103))' : 'linear-gradient(to top,white,#3f51b5)'}"></div>
 

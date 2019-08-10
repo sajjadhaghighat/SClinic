@@ -1,0 +1,79 @@
+<div class="header">
+  <h1>مدیریت کاربران</h1>
+</div>
+<div class="container">
+<div *ngFor="let x of uservice.userList">
+<div class="row" dir="rtl">
+    <div class="col-md-2 divimg">
+      <i class="fa fa-user" aria-hidden="true"></i>
+    </div>
+    <div class="" class="col-md-10 divtext">
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+            <h4>{{x.Fname}} {{x.Lname}}</h4>
+        </div>
+        <div class="col-md-4">
+            <h6>شماره همراه : {{x.Mobile}}</h6>
+        </div>
+        <div class="col-md-4">
+            <h6>ایمیل : {{x.Email}}</h6>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+            <h6>کد ملی : {{x.UNcode}}</h6>
+        </div>
+        <div class="col-md-4">
+            <h6 *ngIf="x.IsValid">وضعیت حساب : فعال</h6>
+            <h6 *ngIf="!x.IsValid">وضعیت حساب : غیرفعال</h6>
+        </div>
+        <div class="col-md-4">
+            
+        </div>
+      </div>
+      
+    </div>
+</div>
+<div dir="ltr">
+  
+  <button mat-raised-button color="warn"  data-toggle="modal" (click)="getdata(x.UNcode)" data-target="#UDModal">حذف</button>
+  
+</div>
+<br>
+<div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+             'titlediv2-v2': styleservice.Flag == false}">
+</div>
+</div>
+
+</div>
+<br>
+
+<div class="modal fade" id="UDModal">
+  <div class="modal-dialog">
+    <div class="modal-content" style="font-family: 'IRANSans';text-align: center;" >
+    
+      <!-- Modal Header -->
+      <div class="modal-header" >
+        <h4 class="modal-title">تایید حذف</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+          آیا از حذف کردن کاربر مطمئن هستید ؟
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer" dir="rtl">
+        <div class="col-md-6">
+              <button type="button" class="btn btn-danger" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal">خیر</button>
+        </div>
+        <div class="col-md-6">
+              <button type="button" class="btn btn-primary" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal" (click)="onDelete()">بله</button>
+        </div>
+               
+      </div>
+      
+    </div>
+  </div>
+</div>

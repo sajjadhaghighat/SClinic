@@ -1,0 +1,164 @@
+<div class="header">
+  <h1>مدیریت پزشکان</h1>
+</div>
+<div class="container">
+<div *ngFor="let x of dService.doctorList">
+<div class="row" dir="rtl">
+    <div class="col-md-2 divimg">
+      <i class="fa fa-user-md" aria-hidden="true"></i>
+    </div>
+    <div class="" class="col-md-10 divtext">
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+            <h3>دکتر {{x.FULLname}}</h3>
+        </div>
+        <div class="col-md-4">
+            <h6>تخصص : {{x.Expert}}</h6>
+        </div>
+        <div class="col-md-4">
+            <h6>فلوشیپ : {{x.Floship}}</h6>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+            <h6>کد نظام پزشکی : {{x.MCC}}</h6>
+        </div>
+        <div class="col-md-4">
+            <h6>آدرس مطب : {{x.Workaddress}}</h6>
+        </div>
+        <div class="col-md-4">
+            <h6>تلفن مطب : {{x.Workphone}}</h6>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<div dir="ltr">
+  <button mat-raised-button color="primary" data-toggle="modal" (click)="getdata(x.MCC)" data-target="#DdetailModal">مشاهده کامل مشخصات</button> | 
+  <button mat-raised-button color="warn"  data-toggle="modal" (click)="getdata(x.MCC)" data-target="#DDModal">حذف</button>
+  
+</div>
+<br>
+<div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+             'titlediv2-v2': styleservice.Flag == false}">
+</div>
+</div>
+
+</div>
+<br>
+
+<div class="modal fade" id="DDModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="font-family: 'IRANSans';text-align: center;" >
+      
+        <!-- Modal Header -->
+        <div class="modal-header" >
+          <h4 class="modal-title">تایید حذف</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+            آیا از حذف کردن پزشک مطمئن هستید ؟
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer" dir="rtl">
+          <div class="col-md-6">
+                <button type="button" class="btn btn-danger" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal">خیر</button>
+          </div>
+          <div class="col-md-6">
+                <button type="button" class="btn btn-primary" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal" (click)="onDelete()">بله</button>
+          </div>
+                 
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+<div class="modal fade" id="DdetailModal">
+  <div class="modal-dialog">
+    <div class="modal-content" style="font-family: 'IRANSans';text-align: center;" >
+    
+      <!-- Modal Header -->
+      <div class="modal-header" >
+        <h4 class="modal-title">مشخصات پزشک</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+          <div class="row" dir="rtl">
+            <div class="col-md-6">
+              <label style="color:blue">نام و نام خانوادگی</label>
+              <p>{{dService.selectedDoctor.FULLname}}</p>
+            </div>
+            <div class="col-md-6">
+                <label style="color:blue">آدرس ایمیل</label>
+                <p>{{dService.selectedDoctor.Email}}</p>
+              </div>
+          </div>
+          <div class="row" dir="rtl">
+              <div class="col-md-6">
+                <label style="color:blue">شماره همراه شخصی</label>
+                <p>{{dService.selectedDoctor.Mobile}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label style="color:blue">شهر محل کار</label>
+                  <p>{{dService.selectedDoctor.Workcity}}</p>
+                </div>
+          </div>
+          <div class="row" dir="rtl">
+              <div class="col-md-6">
+                <label style="color:blue">جنسیت</label>
+                <p>{{dService.selectedDoctor.DSex}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label style="color:blue">صفحه اختصاصی</label>
+                  <p>{{dService.selectedDoctor.Proprietary}}</p>
+                </div>
+          </div>
+          <div class="row" dir="rtl">
+              <div class="col-md-6">
+                <label style="color:blue">کد نظام پزشکی</label>
+                <p>{{dService.selectedDoctor.MCC}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label style="color:blue">تخصص</label>
+                  <p>{{dService.selectedDoctor.Expert}}</p>
+                </div>
+          </div>
+          <div class="row" dir="rtl">
+              <div class="col-md-6">
+                <label style="color:blue">فلوشیپ</label>
+                <p>{{dService.selectedDoctor.Floship}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label style="color:blue">نام محل کار</label>
+                  <p>{{dService.selectedDoctor.Workname}}</p>
+                </div>
+          </div>
+          <div class="row" dir="rtl">
+              <div class="col-md-6">
+                <label style="color:blue">تلفن محل کار</label>
+                <p>{{dService.selectedDoctor.Workphone}}</p>
+              </div>
+              <div class="col-md-6">
+                  <label style="color:blue">آدرس محل کار</label>
+                  <p>{{dService.selectedDoctor.Workaddress}}</p>
+                </div>
+          </div>
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer" dir="rtl">
+        <div class="col-md-12">
+              <button type="button" class="btn btn-danger" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal">بستن</button>
+        </div>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>

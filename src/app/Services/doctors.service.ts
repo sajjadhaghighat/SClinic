@@ -36,6 +36,11 @@ export class DoctorsService {
     .toPromise().then(res => this.selectedDoctor = res as IDoctors);
     
   }
+  getDoctorDetail(id : string){
+    this.http.get(this.URL + 'Doctors/' + id)
+    .toPromise().then(res => this.selectedDoctor = res as IDoctors);
+    
+  }
 
   getDoctorList(){
     this.http.get(this.URL + 'Doctors')

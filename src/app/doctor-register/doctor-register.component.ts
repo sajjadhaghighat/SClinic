@@ -4,6 +4,7 @@ import { DoctorsService } from '../Services/doctors.service';
 import { IAccounts } from '../Models/accounts.model';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { UsersService } from '../Services/users.service';
 
 @Component({
   selector: 'app-doctor-register',
@@ -12,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class DoctorRegisterComponent implements OnInit {
 
-  constructor(public dService : DoctorsService, private toastr : ToastrService,private router:Router) { }
+  constructor(public dService : DoctorsService, private toastr : ToastrService,private router:Router,public uservice:UsersService) { }
 
   DUsernameflag: boolean =false;
   
@@ -28,7 +29,9 @@ export class DoctorRegisterComponent implements OnInit {
   onSubmit(form: NgForm){
     this.dService.postDoctor(form.value).subscribe(
       data => {
-        
+        this.uservice.getUserList();
+        this.uservice.getAccountsList();
+        this.dService.getDoctorList();
         this.toastr.success('ثبت نام شما با موفقیت انجام شد', 'ثبت نام');
         this.router.navigate(['/']);
         let role : IAccounts = {
@@ -40,7 +43,7 @@ export class DoctorRegisterComponent implements OnInit {
         console.log(role);
         this.dService.postAccounts(role).subscribe(
           data => {
-              
+                
                this.toastr.info('اکانت شما هم اکنون فعال است','نکته');
      
           },

@@ -24,6 +24,11 @@ import { PostManagementComponent } from './admin/post-management/post-management
 import { PostsComponent } from './posts/posts.component';
 import { PostComponent } from './posts/post/post.component';
 import { DeleteUserComponent } from './user-panel/delete-user/delete-user.component';
+import { DeleteDoctorComponent } from './doctor-panel/delete-doctor/delete-doctor.component';
+import { UserManagementComponent } from './admin/user-management/user-management.component';
+import { DoctorManagementComponent } from './admin/doctor-management/doctor-management.component';
+import { ContactManagementComponent } from './admin/contact-management/contact-management.component';
+import { VisitManagementComponent } from './admin/visit-management/visit-management.component';
 
 const routes: Routes = [
 {
@@ -47,7 +52,8 @@ const routes: Routes = [
   canActivate: [UserGuardService] ,
   children : [
     {path : 'doctor-profile' , component : DoctorProfileComponent},
-    {path : 'question-list' , component : QuestionListComponent}
+    {path : 'question-list' , component : QuestionListComponent},
+    {path : 'delete-doctor' , component: DeleteDoctorComponent}
   ]
 },
 {
@@ -86,7 +92,11 @@ const routes: Routes = [
   component: AdminComponent , 
   canActivate: [AdminGuardService],
   children : [
-    {path : 'post-management' , component : PostManagementComponent}
+    {path : 'post-management' , component : PostManagementComponent},
+    {path : 'user-management' , component :  UserManagementComponent},
+    {path : 'doctor-management' , component :  DoctorManagementComponent},
+    {path : 'contact-management' , component : ContactManagementComponent },
+    {path : 'visit-management' , component :  VisitManagementComponent}
   ]
 },
 {
