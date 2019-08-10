@@ -1,3 +1,137 @@
-<p>
-  visit-management works!
-</p>
+<div class="header">
+  <h1>لیست سوالات</h1>
+</div>
+<div class="container">
+<div *ngFor="let x of vservice.visitList; let i = index">
+
+<div class="row" dir="rtl">
+    <div class="col-md-2 divimg">
+        <h1 >{{i+1}}</h1>
+        <i class="fa fa-question-circle-o" aria-hidden="true"></i>
+        <button mat-raised-button color="warn"  data-toggle="modal" (click)="getdata(x.VID)" data-target="#VDModal">حذف سوال</button>
+    </div>
+    <div class="" class="col-md-10 divtext">
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-3">
+            <p>حوزه سوال بیمار</p>
+            <h6>{{x.Cate}}</h6>
+        </div>
+        <div class="col-md-3">
+          <p>سن</p>
+          <h6>{{x.Vage}}</h6>
+        </div>
+        <div class="col-md-3">
+          <p>قد</p>
+          <h6>{{x.Vheight}} سانتی متر</h6>
+        </div>
+        <div class="col-md-3">
+            <p>جنسیت</p>
+            <h6>{{x.Sex}}</h6>
+        </div>
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+          <p>وزن</p>
+          <h6>{{x.Vweight}} کیلوگرم</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سابقه بیماری های دیگر</p>
+          <h6>{{x.Qother}}</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سابقه بیماری های خاص</p>
+          <h6>{{x.Qspecial}}</h6>
+        </div>
+        
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+          <p>سابقه مصرف دارو</p>
+          <h6>{{x.Qdrug}}</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سابقه عمل های جراحی</p>
+          <h6>{{x.Qamal}}</h6>
+        </div>
+        <div class="col-md-4">
+          <p>سابقه بیماری در خانواده یا فامیل</p>
+          <h6>{{x.Qfamily}}</h6>
+        </div>
+        
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+          <p>سایر موارد</p>
+          <h6>{{x.Qothercase}}</h6>
+        </div>
+        
+      </div>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-md-4">
+          <p>عنوان سوال</p>
+          <h6>{{x.Qtitle}}</h6>
+        </div>
+        <div class="col-md-8">
+          <p>متن سوال</p>
+          <h6>{{x.Qtext}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let y of rservice.responseList">
+      <div *ngIf="y.VID==x.VID">
+          <div class="row resborder" >
+              <div class="col-md-4 dname" >
+                <div *ngFor="let m of dservice.doctorList">
+                    <div *ngIf="m.MCC==y.MCC">
+                      
+                          <strong>دکتر {{m.FULLname}}</strong>
+                    </div>
+                </div>
+                </div>
+            
+                <div class="col-md-8 resstyle" *ngIf="y.VID==x.VID">
+                    {{y.Rtext}}
+                </div>
+            </div>
+  
+      </div>
+    </div>
+
+   
+  <div Class="titlediv2-v2"></div>
+</div>
+
+</div>
+<br><br>
+
+<div class="modal fade" id="VDModal">
+  <div class="modal-dialog">
+    <div class="modal-content" style="font-family: 'IRANSans';text-align: center;" >
+    
+      <!-- Modal Header -->
+      <div class="modal-header" >
+        <h4 class="modal-title">تایید حذف</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      
+      <!-- Modal body -->
+      <div class="modal-body">
+          آیا از حذف کردن سوال مطمئن هستید ؟
+      </div>
+      
+      <!-- Modal footer -->
+      <div class="modal-footer" dir="rtl">
+        <div class="col-md-6">
+              <button type="button" class="btn btn-danger" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal">خیر</button>
+        </div>
+        <div class="col-md-6">
+              <button type="button" class="btn btn-primary" style="width: 100%;font-family: 'IRANSans'" data-dismiss="modal" (click)="onDelete()">بله</button>
+        </div>
+               
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -19,7 +19,6 @@ export class ContactManagementComponent implements OnInit {
   getdata(code : number)
   {
     this.select = code;
-    this.cservice.getContactList();
   }
   onDelete()
   {

@@ -27,8 +27,9 @@ export class QuestionListComponent implements OnInit {
 
   
   ngOnInit() {
-
+    
     this.userVisits = this.vservice.visitList.filter(x=> x.MCC == null && x.Cate == this.dservice.selectedDoctor.Expert);
+    
   }
 
   postResponse(form : NgForm)
