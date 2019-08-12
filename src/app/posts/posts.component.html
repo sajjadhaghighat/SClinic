@@ -2,8 +2,14 @@
 <div class="header">
         <h1>مطالب آموزشی</h1>
 </div>
+<div class="divpage">
+    <pagination-controls (pageChange)="p = $event" previousLabel="قبلی"
+                                                   nextLabel="بعدی"></pagination-controls>
+</div>
+<div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+                 'titlediv2-v2': styleservice.Flag == false}"></div>
 <div class="container">
-    <div *ngFor="let x of pservice.postList">
+    <div *ngFor="let x of pservice.postList | paginate: { itemsPerPage: 4, currentPage: p }">
         <div class="row postshow" dir="rtl"  >
         <div class="divimg">
             <img class="zoom" [src]="x.Image" alt="">
@@ -24,5 +30,6 @@
     </div>
     </div>
 </div>
-<br><br>
+<br>
+
 <app-footer></app-footer>

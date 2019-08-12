@@ -5,6 +5,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MatSelectModule,MatFormFieldModule,MatInputModule,MatButtonModule, MatIconModule, MatGridListModule, MatCardModule, MatMenuModule,MatRadioModule,MatTabsModule } from '@angular/material'
 import { ToastrModule  } from 'ngx-toastr';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -100,6 +101,7 @@ import { VisitManagementComponent } from './admin/visit-management/visit-managem
     ReactiveFormsModule,
     MatRadioModule,
     MatTabsModule,
+    NgxPaginationModule,
     ToastrModule.forRoot(
       {toastClass: 'ngx-toastr toastr',positionClass:'toast-top-left'}
     )

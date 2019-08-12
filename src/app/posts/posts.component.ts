@@ -9,6 +9,7 @@ import { PostService } from '../Services/post.service';
 })
 export class PostsComponent implements OnInit {
 
+  p: number = 1;
   constructor(public styleservice : StyleService,public pservice : PostService) { }
 
   ngOnInit() {

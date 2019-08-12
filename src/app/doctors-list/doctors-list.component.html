@@ -2,8 +2,14 @@
 <div class="header">
         <h1>فهرست پزشکان</h1>
 </div>
+<div class="divpage">
+  <pagination-controls (pageChange)="p = $event" previousLabel="قبلی"
+                                                 nextLabel="بعدی"></pagination-controls>
+</div>
+<div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+               'titlediv2-v2': styleservice.Flag == false}"></div>
 <div class="container">
-  <div *ngFor="let x of dService.doctorList">
+  <div *ngFor="let x of dService.doctorList | paginate: { itemsPerPage: 4, currentPage: p }">
       <div class="row" dir="rtl">
           <div class="col-md-2 divimg">
             <i class="fa fa-user-md" aria-hidden="true"></i>

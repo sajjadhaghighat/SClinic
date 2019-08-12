@@ -9,6 +9,7 @@ import { DoctorsService } from '../Services/doctors.service';
 })
 export class DoctorsListComponent implements OnInit {
 
+  p: number = 1;
   constructor(public styleservice : StyleService,public dService : DoctorsService) { }
 
   ngOnInit() {
