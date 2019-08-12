@@ -14,7 +14,10 @@
         <div class="row divtext">
           <div class="col-lg-10 mx-auto">
               <section>
-                  <p>{{pservice.selectedPost.Text}}</p>
+                  
+                  <!--<p>{{pservice.selectedPost.Text}}</p>--->
+                    <quill-view [content]="pservice.selectedPost.Text" format="text" theme="snow"></quill-view>
+                  
                   <br>
                   <h6 style="color: red;" >دسته بندی : {{pservice.selectedPost.Category}}</h6>
                   <br>

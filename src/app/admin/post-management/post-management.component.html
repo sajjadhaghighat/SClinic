@@ -70,13 +70,17 @@
                                                             
                             </div>
                             <br>
-                            <div class="form-row">
-                                
-                                    <mat-form-field class="full-width">
+                            <button type="button" class="btn btn-lg btn-block btn-info" (click)="changeEditor()">تعویض ادیتور</button>
+                            <br>
+                            <div class="form-row" *ngIf="editorFlag">
+                                <label for="">متن اصلی</label>
+                                <quill-editor #Text="ngModel" ngModel name="Text"></quill-editor>
+                            </div>
+                            <div class="form-row" *ngIf="!editorFlag">
+                                <mat-form-field class="full-width">
                                         <textarea type="text" #Text="ngModel" name="Text" ngModel matInput  placeholder="متن اصلی مطلب" required></textarea>
                                         <mat-error *ngIf="Text.invalid">متن اصلی مطلب را بنویسید </mat-error>
-                                    </mat-form-field>
-                                                            
+                                </mat-form-field>
                             </div>
                             <br>
                             <br>

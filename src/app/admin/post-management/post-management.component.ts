@@ -14,6 +14,7 @@ import { SummaryResolver } from '@angular/compiler';
 })
 export class PostManagementComponent implements OnInit {
 
+  editorFlag : boolean = false;
   constructor(public pservice:PostService,
               private toastr : ToastrService,
               private router: Router,
@@ -37,6 +38,12 @@ export class PostManagementComponent implements OnInit {
       form.reset();
     }
   }
+
+  changeEditor()
+  {
+    this.editorFlag = !this.editorFlag;
+  }
+
   onSubmit(form : NgForm)
   {
     console.log(form.value);
