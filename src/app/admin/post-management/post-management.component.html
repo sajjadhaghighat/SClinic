@@ -64,7 +64,7 @@
                             <div class="form-row">
                                 
                                     <mat-form-field class="full-width">
-                                        <input type="text" #Summary="ngModel" name="Summary" ngModel matInput  placeholder="خلاصه مطلب" required>
+                                        <textarea type="text" #Summary="ngModel" name="Summary" ngModel matInput  placeholder="خلاصه مطلب" required></textarea>
                                         <mat-error *ngIf="Summary.invalid">خلاصه مطلب را بنویسید </mat-error>
                                     </mat-form-field>
                                                             
@@ -202,7 +202,7 @@
                 <div class="form-row">
                     
                         <mat-form-field class="full-width">
-                            <input type="text" #Summary1="ngModel" name="Summary" ngModel [(ngModel)]="pservice.selectedPost.Summary" matInput  placeholder="خلاصه مطلب" required>
+                            <textarea type="text" #Summary1="ngModel" name="Summary" ngModel [(ngModel)]="pservice.selectedPost.Summary" matInput  placeholder="خلاصه مطلب" required></textarea>
                             <mat-error *ngIf="Summary1.invalid">خلاصه مطلب را بنویسید </mat-error>
                         </mat-form-field>
                                                 
@@ -210,11 +210,8 @@
                 <br>
                 <div class="form-row">
                     
-                        <mat-form-field class="full-width">
-                            <textarea type="text" #Text1="ngModel" name="Text" ngModel matInput [(ngModel)]="pservice.selectedPost.Text" placeholder="متن اصلی مطلب" required></textarea>
-                            <mat-error *ngIf="Text1.invalid">متن اصلی مطلب را بنویسید </mat-error>
-                        </mat-form-field>
-                                                
+                        <quill-editor #Text1="ngModel" name="Text" ngModel [(ngModel)]="pservice.selectedPost.Text"></quill-editor>
+                        
                 </div>
                 <br>
                 <br>

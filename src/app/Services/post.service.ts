@@ -15,7 +15,7 @@ export class PostService {
   constructor(private http : HttpClient,private cookie:CookieService) { }
 
   postPost(emp : IPost){
-    console.log(emp);
+    
     return this.http.post(this.URL + 'Posts',emp);
 
   }
@@ -34,9 +34,6 @@ export class PostService {
     this.http.get(this.URL + 'Posts')
     .toPromise().then(res => this.postList = res as IPost[]);
     
-    setTimeout(() => {
-      this.postList.reverse();
-    }, 100);
   }
  
   deletePost(id : number){

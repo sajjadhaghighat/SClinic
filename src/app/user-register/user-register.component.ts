@@ -68,7 +68,7 @@ export class UserRegisterComponent implements OnInit {
           Type : 'user',
           NCode : form.value.UNcode
         };
-        console.log(role);
+        
         this.userService.postAccounts(role).subscribe(
           data => {
               
@@ -82,7 +82,7 @@ export class UserRegisterComponent implements OnInit {
         );
       },
       error => {
-        console.log(error.status);
+        
         if(error.status == 409){
           this.toastr.warning('شناسه کاربری وارد شده قبل در سیستم ثبت شده است','خطا');
         

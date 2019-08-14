@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   }
   onSubmit(form : NgForm){
-    console.log(form.value);
+    
     let users = this.userService.userList;
     let doctors = this.dService.doctorList;
     let accounts = this.userService.accountsList;

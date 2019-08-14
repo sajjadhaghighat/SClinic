@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   mytext : string="کلینیک خاص";
   index  :number = 0;
   ngOnInit() {
+    this.pservice.getPostList();
     setInterval(()=>{this.chtext();},4000);
   }
   chtext()
@@ -47,7 +48,7 @@ export class HomeComponent implements OnInit {
   }
   postNewletter(form : NgForm)
   {
-      console.log(form.value);
+      
       if(form.value.Nemail == "")
       {
         this.toastr.error('لطفا ایمیل خود را وارد کنید','خطا');

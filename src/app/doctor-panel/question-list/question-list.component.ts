@@ -34,7 +34,7 @@ export class QuestionListComponent implements OnInit {
 
   postResponse(form : NgForm)
   {
-    console.log(form.value);
+    
     this.rservice.postResponse(form.value).subscribe(
       data=>{
           this.toastr.success('پاسخ سوال با موفقیت ثبت شد','پیغام');

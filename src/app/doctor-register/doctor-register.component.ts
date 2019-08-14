@@ -40,7 +40,7 @@ export class DoctorRegisterComponent implements OnInit {
           Type : 'doctor',
           NCode : form.value.MCC
         };
-        console.log(role);
+        
         this.dService.postAccounts(role).subscribe(
           data => {
                 
@@ -54,7 +54,7 @@ export class DoctorRegisterComponent implements OnInit {
         );
       },
       error => {
-        console.log(error.status);
+        
         if(error.status == 409){
           this.toastr.warning('شخصی قبلا با این کد ملی ثبت نام کرده است','خطا');
         

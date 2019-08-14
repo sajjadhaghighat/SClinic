@@ -19,7 +19,7 @@ export class UsersService {
 
   }
   postUser(emp : IUsers){
-    console.log(emp);
+    
     return this.http.post(this.URL + 'Users',emp);
 
   }

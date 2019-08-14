@@ -16,7 +16,6 @@ export class VisitService {
 
   postVisit(emp : IVisit){
     emp.UNcode = this.cookie.get('code');
-    console.log(emp);
     return this.http.post(this.URL + 'Visits',emp);
 
   }

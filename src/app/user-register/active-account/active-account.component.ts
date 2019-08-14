@@ -27,7 +27,7 @@ export class ActiveAccountComponent implements OnInit {
   update()
   {
       let findUser = this.us.userList;
-      console.log(findUser);
+      
       let f = findUser.find(x=> x.Token == this.token);
       f.IsValid = true;
       this.us.putUser(f.UNcode,f).subscribe(

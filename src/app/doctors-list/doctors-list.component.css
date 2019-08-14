@@ -65,3 +65,11 @@ img{
   padding-top: 25px ;
   font-family: 'IRANSans'
 } 
+.full-width {
+  width: 100%;
+  text-align: right;
+  font-family: 'IRANSans';
+}
+mat-option,mat-optgroup{
+  font-family: 'IRANSans';
+}

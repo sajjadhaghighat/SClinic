@@ -48,3 +48,12 @@
     border-right: 2px solid red;
     color: gold;
   }
+.heartt{
+  color: red;
+  animation: tepesh 2s linear infinite ;
+}  
+@keyframes tepesh{
+  0% {font-size: 100px;}
+  50% {font-size: 110px;}
+  100% {font-size: 100px;}
+}

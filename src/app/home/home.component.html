@@ -94,10 +94,14 @@
 
 
 
-<div [ngStyle]="{'height.px':730,'background-image': styleservice.Flag ?  'linear-gradient(to top, #114178, white,white,white,rgb(0, 93, 103)' : 'linear-gradient(to top, #114178, white,white,white,#3f51b5)'}">
-  <div style="height:300px;" ></div>
+<div [ngStyle]="{'height.px':970,'background-image': styleservice.Flag ?  'linear-gradient(to top, #114178, white,white,white,rgb(0, 93, 103)' : 'linear-gradient(to top, #114178, white,white,white,#3f51b5)'}">
+  <div style="height:400px;" ></div>
   <div >
-    <div class="raghs">عضویت در خبرنامه</div>
+    <div class="container">
+      <div style="padding: 10px; background-color: #FF8C00;border-radius: 50px;">
+          <div class="raghs">عضویت در خبرنامه</div>
+      </div>
+    </div>
     <div class="newletter" dir="rtl" >
       <div class="container" >
           <div class="col-lg-6 mx-auto">
@@ -112,6 +116,6 @@
       </div>
      </div>
   </div>
-  <div style="height:300px;"></div>
+  <div style="height:400px;"></div>
 </div>
 <app-footer></app-footer>

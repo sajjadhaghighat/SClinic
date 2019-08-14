@@ -15,7 +15,7 @@ export class ResponseService {
   constructor(private http : HttpClient,private cookie:CookieService) { }
 
   postResponse(emp : IResponse){
-    console.log(emp);
+    
     return this.http.post(this.URL + 'Responses',emp);
 
   }

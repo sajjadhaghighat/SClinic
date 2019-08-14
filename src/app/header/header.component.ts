@@ -19,8 +19,8 @@ export class HeaderComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.pservice.getPostList();
-    this.pservice.postList.reverse();
+    
+        
   }
   signOut(){
     this.toastr.success('با موفقیت خارج شدید',this.cookie.get('name'));

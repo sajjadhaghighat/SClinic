@@ -17,7 +17,7 @@ export class DoctorsService {
   constructor(private http : HttpClient,private cookie:CookieService) { }
 
   postDoctor(emp : IDoctors){
-    console.log(emp);
+    
     return this.http.post(this.URL + 'Doctors',emp);
 
   }

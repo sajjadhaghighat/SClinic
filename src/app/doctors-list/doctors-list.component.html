@@ -2,14 +2,79 @@
 <div class="header">
         <h1>فهرست پزشکان</h1>
 </div>
-<div class="divpage">
+<div class="divpage" *ngIf="DExpert.value == 'همه'">
   <pagination-controls (pageChange)="p = $event" previousLabel="قبلی"
                                                  nextLabel="بعدی"></pagination-controls>
 </div>
+<br>
+<div class="container" dir="rtl">
+  <div class="row">
+    <mat-form-field class="full-width">
+      <mat-label>فیلتر بر اساس تخصص پزشک</mat-label>
+      <mat-select #DExpert="ngModel" name="DExpert" ngModel [(ngModel)]="selected">
+          <mat-option value="همه">همه</mat-option>
+          <mat-option value="جراح عمومی">جراح عمومی</mat-option>
+          <mat-option value="فوق تخصص جراحی پلاستیک،ترمیمی و زیبایی">فوق تخصص جراحی پلاستیک،ترمیمی و زیبایی</mat-option>
+          <mat-option value="فوق تخصص جراحی قلب">فوق تخصص جراحی قلب</mat-option>
+          <mat-option value="فوق تخصص جراحی عروق و تروما">فوق تخصص جراحی عروق و تروما</mat-option>
+          <mat-option value="فوق تخصص جراحی اطفال">فوق تخصص جراحی اطفال</mat-option>
+          <mat-option value="فوق تخصص جراحی قفسه سینه">فوق تخصص جراحی قفسه سینه</mat-option>
+          <mat-option value="جراح و متخصص ارتوپدی">جراح و متخصص ارتوپدی</mat-option>
+          <mat-option value="جراح و متخصص زنان و زایمان">جراح و متخصص زنان و زایمان</mat-option>
+          <mat-option value="جراح کلیه و مجاری ادراری">جراح کلیه و مجاری ادراری (اورولوژی)</mat-option>
+          <mat-option value="جراح مغز و اعصاب و ستون فقرات">جراح مغز و اعصاب و ستون فقرات</mat-option>
+          <mat-option value="جراح و متخصص گوش و حلق و بینی">جراح و متخصص گوش و حلق و بینی</mat-option>
+          <mat-option value="جراح و متخصص چشم">جراح و متخصص چشم</mat-option>
+          <mat-option value="فوق تخصص جراحی حنجره">فوق تخصص جراحی حنجره</mat-option>
+          <mat-option value="متخصص راديولوژى">متخصص راديولوژى</mat-option>
+          <mat-option value="متخصص رادیوتراپی">متخصص رادیوتراپی (پرتودرمانی)</mat-option>
+          <mat-option value="متخصص قلب و عروق">متخصص قلب و عروق</mat-option>
+          <mat-option value="متخصص اعصاب و روان">متخصص اعصاب و روان (روانپزشک)</mat-option>
+          <mat-option value="متخصص بيمارى هاى عفونى">متخصص بيمارى هاى عفونى</mat-option>
+          <mat-option value="متخصص مغز و اعصاب">متخصص مغز و اعصاب (نورولوژی)</mat-option>
+          <mat-option value="متخصص پوست، مو و زيبايى">متخصص پوست، مو و زيبايى</mat-option>
+          <mat-option value="متخصص بیماری های کودکان">متخصص بیماری های کودکان (اطفال)</mat-option>
+          <mat-option value="متخصص بيهوشى">متخصص بيهوشى</mat-option>
+          <mat-option value="متخصص پاتولوژى و علوم آزمايشگاهى">متخصص پاتولوژى و علوم آزمايشگاهى</mat-option>
+          <mat-option value="متخصص پاتولوژى قانونى و مسموميت">متخصص پاتولوژى قانونى و مسموميت</mat-option>
+          <mat-option value="متخصص طب فیزیکی و توانبخشی">متخصص طب فیزیکی و توانبخشی</mat-option>
+          <mat-option value="متخصص داخلى">متخصص داخلى</mat-option>
+          <mat-option value="فوق تخصص مفاصل و عضلات">فوق تخصص مفاصل و عضلات (روماتولوژى)</mat-option>
+          <mat-option value="فوق تخصص کليه و مجارى ادرارى">فوق تخصص کليه و مجارى ادرارى</mat-option>
+          <mat-option value="فوق تخصص گوارش و كبد">فوق تخصص گوارش و كبد</mat-option>
+          <mat-option value="فوق تخصص ریه">فوق تخصص ریه</mat-option>
+          <mat-option value="فوق تخصص خون و سرطان">فوق تخصص خون و سرطان</mat-option>
+          <mat-option value="فوق تخصص درد">فوق تخصص درد</mat-option>
+          <mat-option value="فوق تخصص غدد درون ریز و متابولیسم">فوق تخصص غدد درون ریز و متابولیسم</mat-option>
+          <mat-option value="متخصص ایمپلنت و پروتزهای دندانی">متخصص ایمپلنت و پروتزهای دندانی</mat-option>
+          <mat-option value="متخصص جراحی لثه">متخصص جراحی لثه</mat-option>
+          <mat-option value="متخصص بیماری های دهان">متخصص بیماری های دهان</mat-option>
+          <mat-option value="دندانپزشک عمومی">دندانپزشک عمومی</mat-option>
+          <mat-option value="جراح دهان و فک و صورت">جراح دهان و فک و صورت</mat-option>
+          <mat-option value="متخصص درمان ریشه دندان">متخصص درمان ریشه دندان</mat-option>
+          <mat-option value="متخصص دندانپزشکی ترمیمی">متخصص دندانپزشکی ترمیمی</mat-option>
+          <mat-option value="متخصص ارتودنسی">متخصص ارتودنسی</mat-option>
+          <mat-option value="متخصص دندانپزشکی اطفال">متخصص دندانپزشکی اطفال</mat-option>
+          <mat-option value="فیزیوتراپی">فیزیوتراپی</mat-option>
+          <mat-option value="روانشناس">روانشناس</mat-option>
+          <mat-option value="متخصص تغذیه">متخصص تغذیه</mat-option>
+          <mat-option value="ترک اعتیاد">ترک اعتیاد</mat-option>
+          <mat-option value="پزشک عمومی">پزشک عمومی</mat-option>
+          <mat-option value="پزشک خانواده">پزشک خانواده</mat-option>
+          <mat-option value="طب سوزنی">طب سوزنی</mat-option>
+          <mat-option value="دامپزشک">دامپزشک</mat-option>
+          
+      </mat-select>
+      
+    </mat-form-field>
+  </div>
+</div>
+<br>
 <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
                'titlediv2-v2': styleservice.Flag == false}"></div>
 <div class="container">
-  <div *ngFor="let x of dService.doctorList | paginate: { itemsPerPage: 4, currentPage: p }">
+  <div *ngIf="DExpert.value == 'همه'; else elseBlock">
+    <div *ngFor="let x of dService.doctorList | paginate: { itemsPerPage: 4, currentPage: p }">
       <div class="row" dir="rtl">
           <div class="col-md-2 divimg">
             <i class="fa fa-user-md" aria-hidden="true"></i>
@@ -43,8 +108,48 @@
       <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
                    'titlediv2-v2': styleservice.Flag == false}">
       </div>
+    </div>
   </div>
-    
+  <ng-template #elseBlock>
+    <div *ngFor="let x of dService.doctorList"> 
+      <div *ngIf="DExpert.value == x.Expert">
+        <div class="row" dir="rtl">
+          <div class="col-md-2 divimg">
+            <i class="fa fa-user-md" aria-hidden="true"></i>
+          </div>
+          <div class="" class="col-md-10 divtext">
+            <div class="row" style="margin-top:20px;">
+              <div class="col-md-4">
+                  <h3>دکتر {{x.FULLname}}</h3>
+              </div>
+              <div class="col-md-4">
+                  <h6>تخصص : {{x.Expert}}</h6>
+              </div>
+              <div class="col-md-4">
+                  <h6>فلوشیپ : {{x.Floship}}</h6>
+              </div>
+            </div>
+            <div class="row" style="margin-top:20px;">
+              <div class="col-md-4">
+                  <h6>کد نظام پزشکی : {{x.MCC}}</h6>
+              </div>
+              <div class="col-md-4">
+                  <h6>آدرس مطب : {{x.Workaddress}}</h6>
+              </div>
+              <div class="col-md-4">
+                  <h6>تلفن مطب : {{x.Workphone}}</h6>
+              </div>
+            </div>
+            
+          </div>
+      </div>
+      <div [ngClass]="{'titlediv2' : styleservice.Flag == true,
+                   'titlediv2-v2': styleservice.Flag == false}">
+      </div>
+      </div>
+    </div>
+  </ng-template>
+  
 </div>
 <br><br><br>
 <app-footer></app-footer>

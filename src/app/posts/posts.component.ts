@@ -13,6 +13,8 @@ export class PostsComponent implements OnInit {
   constructor(public styleservice : StyleService,public pservice : PostService) { }
 
   ngOnInit() {
+    this.pservice.getPostList();
+    
   }
 
 }
