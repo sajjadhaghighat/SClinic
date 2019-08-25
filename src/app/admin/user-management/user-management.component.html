@@ -24,8 +24,8 @@
             <h6>کد ملی : {{x.UNcode}}</h6>
         </div>
         <div class="col-md-4">
-            <h6 *ngIf="x.IsValid">وضعیت حساب : فعال</h6>
-            <h6 *ngIf="!x.IsValid">وضعیت حساب : غیرفعال</h6>
+            <h6 style="color: green;" *ngIf="x.IsValid">وضعیت حساب : فعال</h6>
+            <h6 style="color: red;" *ngIf="!x.IsValid">وضعیت حساب : غیرفعال</h6>
         </div>
         <div class="col-md-4">
             
